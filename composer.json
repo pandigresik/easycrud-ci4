@@ -1,7 +1,7 @@
 {
-	"name": "codeigniter4/appstarter",
+	"name": "codeigniter4/easycrud-ci4",
 	"type": "project",
-	"description": "CodeIgniter4 starter app",
+	"description": "CodeIgniter4 starter app with crud generator",
 	"homepage": "https://codeigniter.com",
 	"license": "MIT",
 	"require": {
@@ -64,10 +64,5 @@
 		"mutate": "infection --threads=2 --skip-initial-tests --coverage=build/phpunit",
 		"style": "php-cs-fixer fix --verbose --ansi --using-cache=no",
 		"test": "phpunit"
-	},
-	"support": {
-		"forum": "http://forum.codeigniter.com/",
-		"source": "https://github.com/lonnieezell/Bonfire2",
-		"slack": "https://codeigniterchat.slack.com"
-	}
+	}	
 }

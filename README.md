@@ -1,6 +1,6 @@
 # Easycrud-ci4
 
-Starter application with crud generator
+Starter application with crud generator, adpoted from https://github.com/lonnieezell/Bonfire2.git
 
 ## Instalasi
 
