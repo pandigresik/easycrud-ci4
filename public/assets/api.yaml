@@ -1,0 +1,783 @@
+openapi: 3.0.0
+servers:
+  - url: /api
+paths:
+  /auth/login:
+    post:
+      tags:
+        - Authentication
+      summary: "login page to authenticate user"
+      operationId: userLogin
+      requestBody:
+        description: "Login user"
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+              type: object
+      responses:
+        "200":
+          description: "Login successed"
+          content:
+            application/json:
+              schema: {}
+            application/xml:
+              schema: {}
+        "400":
+          description: "Invalid email/password supplied"
+  /auth/register:
+    post:
+      tags:
+        - Authentication
+      summary: "register page to new user"
+      operationId: userRegister
+      requestBody:
+        description: "Login user"
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                email:
+                  type: string
+                username:
+                  type: string
+                password:
+                  type: string
+                pass_confirm:
+                  type: string
+              type: object
+      responses:
+        "200":
+          description: "Login successed"
+          content:
+            application/json:
+              schema: {}
+            application/xml:
+              schema: {}
+        "400":
+          description: "Invalid username/password supplied"
+  /jabatans:
+    get:
+      tags:
+        - Jabatan
+      summary: "Find list Jabatan"
+      description: "Returns list of Jabatan"
+      operationId: getJabatan
+      parameters:
+        - name: search
+          in: query
+          description: "search by column defined"
+          schema:
+            type: object
+        - name: order
+          in: query
+          description: "order by column defined"
+          schema:
+            type: object
+        - name: page
+          in: query
+          description: "page to show"
+          schema:
+            type: int32
+        - name: limit
+          in: query
+          description: "count data display per page"
+          schema:
+            type: int32
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Jabatan" },
+                    }
+                  pagination:
+                    {
+                      properties:
+                        {
+                          currentPage: { type: integer },
+                          totalPage: { type: integer },
+                        },
+                      type: object,
+                    }
+                type: object
+            application/xml:
+              schema:
+                properties:
+                  data:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Jabatan" },
+                    }
+                  pagination:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Jabatan" },
+                    }
+                type: object
+        "404":
+          description: "Jabatan not found"
+      security:
+        - bearer_auth: []
+    post:
+      tags:
+        - Jabatan
+      summary: "Add a new Jabatan to the store"
+      operationId: addJabatan
+      requestBody:
+        $ref: "#/components/requestBodies/Jabatan"
+      responses:
+        "201":
+          description: "Created Jabatan"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Jabatan"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Jabatan"
+        "405":
+          description: "Invalid input"
+      security:
+        - bearer_auth: []
+  "/jabatans/{id}":
+    get:
+      tags:
+        - Jabatan
+      summary: "Find Jabatan by ID"
+      description: "Returns a single Jabatan"
+      operationId: getJabatanById
+      parameters:
+        - name: id
+          in: path
+          description: "ID of Jabatan to return"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Jabatan"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Jabatan"
+        "400":
+          description: "Invalid ID supplier"
+        "404":
+          description: "Jabatan not found"
+      security:
+        - bearer_auth: []
+    put:
+      tags:
+        - Jabatan
+      summary: "Update an existing Jabatan"
+      operationId: updateJabatan
+      parameters:
+        - name: id
+          in: path
+          description: "Jabatan id to update"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        $ref: "#/components/requestBodies/Jabatan"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Jabatan not found"
+        "405":
+          description: "Validation exception"
+      security:
+        - bearer_auth: []
+    delete:
+      tags:
+        - Jabatan
+      summary: "Deletes a Jabatan"
+      operationId: deleteJabatan
+      parameters:
+        - name: id
+          in: path
+          description: "Jabatan id to delete"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Pet not found"
+      security:
+        - bearer_auth: []
+  /pengurus:
+    get:
+      tags:
+        - Pengurus
+      summary: "Find list Pengurus"
+      description: "Returns list of Pengurus"
+      operationId: getPengurus
+      parameters:
+        - name: search
+          in: query
+          description: "search by column defined"
+          schema:
+            type: object
+        - name: order
+          in: query
+          description: "order by column defined"
+          schema:
+            type: object
+        - name: page
+          in: query
+          description: "page to show"
+          schema:
+            type: int32
+        - name: limit
+          in: query
+          description: "count data display per page"
+          schema:
+            type: int32
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Pengurus" },
+                    }
+                  pagination:
+                    {
+                      properties:
+                        {
+                          currentPage: { type: integer },
+                          totalPage: { type: integer },
+                        },
+                      type: object,
+                    }
+                type: object
+            application/xml:
+              schema:
+                properties:
+                  data:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Pengurus" },
+                    }
+                  pagination:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Pengurus" },
+                    }
+                type: object
+        "404":
+          description: "Pengurus not found"
+      security:
+        - bearer_auth: []
+    post:
+      tags:
+        - Pengurus
+      summary: "Add a new Pengurus to the store"
+      operationId: addPengurus
+      requestBody:
+        $ref: "#/components/requestBodies/Pengurus"
+      responses:
+        "201":
+          description: "Created Pengurus"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pengurus"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Pengurus"
+        "405":
+          description: "Invalid input"
+      security:
+        - bearer_auth: []
+  "/pengurus/{id}":
+    get:
+      tags:
+        - Pengurus
+      summary: "Find Pengurus by ID"
+      description: "Returns a single Pengurus"
+      operationId: getPengurusById
+      parameters:
+        - name: id
+          in: path
+          description: "ID of Pengurus to return"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Pengurus"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Pengurus"
+        "400":
+          description: "Invalid ID supplier"
+        "404":
+          description: "Pengurus not found"
+      security:
+        - bearer_auth: []
+    put:
+      tags:
+        - Pengurus
+      summary: "Update an existing Pengurus"
+      operationId: updatePengurus
+      parameters:
+        - name: id
+          in: path
+          description: "Pengurus id to update"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        $ref: "#/components/requestBodies/Pengurus"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Pengurus not found"
+        "405":
+          description: "Validation exception"
+      security:
+        - bearer_auth: []
+    delete:
+      tags:
+        - Pengurus
+      summary: "Deletes a Pengurus"
+      operationId: deletePengurus
+      parameters:
+        - name: id
+          in: path
+          description: "Pengurus id to delete"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Pet not found"
+      security:
+        - bearer_auth: []
+  /users:
+    get:
+      tags:
+        - Users
+      summary: "Find list Users"
+      description: "Returns list of Users"
+      operationId: getUsers
+      parameters:
+        - name: search
+          in: query
+          description: "search by column defined"
+          schema:
+            type: object
+        - name: order
+          in: query
+          description: "order by column defined"
+          schema:
+            type: object
+        - name: page
+          in: query
+          description: "page to show"
+          schema:
+            type: int32
+        - name: limit
+          in: query
+          description: "count data display per page"
+          schema:
+            type: int32
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Users" },
+                    }
+                  pagination:
+                    {
+                      properties:
+                        {
+                          currentPage: { type: integer },
+                          totalPage: { type: integer },
+                        },
+                      type: object,
+                    }
+                type: object
+            application/xml:
+              schema:
+                properties:
+                  data:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Users" },
+                    }
+                  pagination:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Users" },
+                    }
+                type: object
+        "404":
+          description: "Users not found"
+      security:
+        - bearer_auth: []
+    post:
+      tags:
+        - Users
+      summary: "Add a new Users to the store"
+      operationId: addUsers
+      requestBody:
+        $ref: "#/components/requestBodies/Users"
+      responses:
+        "201":
+          description: "Created Users"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Users"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Users"
+        "405":
+          description: "Invalid input"
+      security:
+        - bearer_auth: []
+  "/users/{id}":
+    get:
+      tags:
+        - Users
+      summary: "Find Users by ID"
+      description: "Returns a single Users"
+      operationId: getUsersById
+      parameters:
+        - name: id
+          in: path
+          description: "ID of Users to return"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Users"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Users"
+        "400":
+          description: "Invalid ID supplier"
+        "404":
+          description: "Users not found"
+      security:
+        - bearer_auth: []
+    put:
+      tags:
+        - Users
+      summary: "Update an existing Users"
+      operationId: updateUsers
+      parameters:
+        - name: id
+          in: path
+          description: "Users id to update"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        $ref: "#/components/requestBodies/Users"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Users not found"
+        "405":
+          description: "Validation exception"
+      security:
+        - bearer_auth: []
+    delete:
+      tags:
+        - Users
+      summary: "Deletes a Users"
+      operationId: deleteUsers
+      parameters:
+        - name: id
+          in: path
+          description: "Users id to delete"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Pet not found"
+      security:
+        - bearer_auth: []
+components:
+  schemas:
+    Jabatan:
+      title: Jabatan
+      description: Jabatan
+      properties:
+        id:
+          nullable: true
+          title: id
+          description: id
+          type: integer
+          format: "-"
+        name:
+          nullable: false
+          title: name
+          description: name
+          type: string
+          format: "-"
+          maxLength: 60
+        description:
+          nullable: false
+          title: description
+          description: description
+          type: string
+          format: "-"
+          maxLength: 255
+        created_at:
+          nullable: true
+          title: created_at
+          description: created_at
+          type: string
+          format: date
+        updated_at:
+          nullable: true
+          title: updated_at
+          description: updated_at
+          type: string
+          format: date
+      type: object
+    Pengurus:
+      title: Pengurus
+      description: Pengurus
+      properties:
+        id:
+          nullable: false
+          title: id
+          description: id
+          type: integer
+          format: "-"
+        name:
+          nullable: false
+          title: name
+          description: name
+          type: string
+          format: "-"
+          maxLength: 255
+        contact:
+          nullable: false
+          title: contact
+          description: contact
+          type: string
+          format: "-"
+          maxLength: 255
+        description:
+          nullable: false
+          title: description
+          description: description
+          type: string
+          format: "-"
+        jabatan_id:
+          nullable: false
+          title: jabatan_id
+          description: jabatan_id
+          type: integer
+          format: "-"
+        created_at:
+          nullable: false
+          title: created_at
+          description: created_at
+          type: string
+          format: date
+        updated_at:
+          nullable: false
+          title: updated_at
+          description: updated_at
+          type: string
+          format: date
+      type: object
+    Users:
+      title: Users
+      description: Users
+      properties:
+        id:
+          nullable: false
+          title: id
+          description: id
+          type: integer
+          format: "-"
+        username:
+          nullable: true
+          title: username
+          description: username
+          type: string
+          format: "-"
+          maxLength: 30
+        first_name:
+          nullable: true
+          title: first_name
+          description: first_name
+          type: string
+          format: "-"
+          maxLength: 255
+        last_name:
+          nullable: true
+          title: last_name
+          description: last_name
+          type: string
+          format: "-"
+          maxLength: 255
+        avatar:
+          nullable: true
+          title: avatar
+          description: avatar
+          type: string
+          format: "-"
+          maxLength: 255
+        status:
+          nullable: true
+          title: status
+          description: status
+          type: string
+          format: "-"
+          maxLength: 255
+        status_message:
+          nullable: true
+          title: status_message
+          description: status_message
+          type: string
+          format: "-"
+          maxLength: 255
+        active:
+          nullable: false
+          title: active
+          description: active
+          type: integer
+          format: "-"
+          maxLength: 1
+        permissions:
+          nullable: true
+          title: permissions
+          description: permissions
+          type: string
+          format: "-"
+        last_active:
+          nullable: true
+          title: last_active
+          description: last_active
+          type: string
+          format: date
+        created_at:
+          nullable: true
+          title: created_at
+          description: created_at
+          type: string
+          format: date
+        updated_at:
+          nullable: true
+          title: updated_at
+          description: updated_at
+          type: string
+          format: date
+        deleted_at:
+          nullable: true
+          title: deleted_at
+          description: deleted_at
+          type: string
+          format: date
+      type: object
+  requestBodies:
+    Jabatan:
+      description: "Jabatan object that needs to be added"
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: "#/components/schemas/Jabatan"
+        application/xml:
+          schema:
+            $ref: "#/components/schemas/Jabatan"
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Jabatan"
+    Pengurus:
+      description: "Pengurus object that needs to be added"
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: "#/components/schemas/Pengurus"
+        application/xml:
+          schema:
+            $ref: "#/components/schemas/Pengurus"
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Pengurus"
+    Users:
+      description: "Users object that needs to be added"
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: "#/components/schemas/Users"
+        application/xml:
+          schema:
+            $ref: "#/components/schemas/Users"
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Users"
+  securitySchemes:
+    bearer_auth: # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+tags:
+  - name: Jabatan
+    description: "Everything about your Jabatan"
+  - name: Pengurus
+    description: "Everything about your Pengurus"
+  - name: Users
+    description: "Everything about your Users"

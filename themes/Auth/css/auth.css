@@ -1,0 +1,102 @@
+:root {
+    --bf-primary: #0275d8;
+    --bf-body-bg: #F1F5F9;
+    --bf-black: #222222;
+    --bf-blue: #2470dc;
+    --bf-grey: #727272;
+    --bf-light-grey: #d2d2d2;
+    --bf-white: #f7f7f7;
+    --bf-success: #5cb85c;
+    --info: #5bc0de;
+    --warning: #f0ad4e;
+    --danger: #d9534f;
+    --dark: #292b2c;
+}
+/*
+ * --------------------------------------------------------------------------
+ * LAYOUT
+ * --------------------------------------------------------------------------
+ */
+body {
+    font-size: 1rem;
+    background: var(--bf-body-bg);
+}
+/*
+ * --------------------------------------------------------------------------
+ * PASSWORDS
+ * --------------------------------------------------------------------------
+ */
+div#pass-meter {
+    display: flex;
+    flex-direction: column-reverse;
+}
+div#pass-meter .segment {
+    display: block;
+    background: var(--bf-white);
+    border: 1px solid var(--bf-light-grey);
+    height: 9px;
+    width: 30px;
+}
+div#pass-meter .segment:last-child {
+    margin-right: 0;
+}
+div#pass-meter.good .segment {
+    background-color: var(--bf-success);
+    border-color: var(--bf-success);
+    border-bottom: 1px solid var(--bf-white);
+}
+div#pass-meter.warn .segment {
+    background-color: var(--warning);
+    border-color: var(--warning);
+    border-bottom: 1px solid var(--bf-white);
+}
+div#pass-meter.bad .segment {
+    background-color: var(--danger);
+    border-color: var(--danger);
+}
+div#pass-meter.str-1 .segment:nth-child(2),
+div#pass-meter.str-1 .segment:nth-child(3),
+div#pass-meter.str-1 .segment:nth-child(4) {
+    background-color: var(--bf-white);
+    border-color: var(--bf-light-grey);
+}
+div#pass-meter.str-2 .segment:nth-child(3),
+div#pass-meter.str-2 .segment:nth-child(4) {
+    background-color: var(--bf-white);
+    border-color: var(--bf-light-grey);
+}
+div#pass-meter.str-3 .segment:nth-child(4) {
+    background-color: var(--bf-white);
+    border-color: var(--bf-light-grey);
+}
+
+#pass-suggestions {
+    text-align: center;
+    color: var(--bf-grey);
+    font-size: 0.8rem;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    min-height: 2.5rem;
+}
+.pass-match-wrap {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 53px;
+}
+.pass-match,
+.pass-not-match {
+    display: inline-block;
+    margin: auto;
+    font-size: 20px;
+    color: var(--bf-success);
+}
+.pass-not-match {
+    color: var(--danger);
+}
+
+
+.collapsible .signal {
+    position: absolute;
+    right: 5px;
+}

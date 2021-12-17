@@ -1,0 +1,86 @@
+
+CodeIgniter v4.1.5 Command Line Tool - Server Time: 2021-11-26 15:27:20 UTC+07:00
+
++--------+-------------------------------------------+---------------------------------------------------------------------------------+
+| Method | Route                                     | Handler                                                                         |
++--------+-------------------------------------------+---------------------------------------------------------------------------------+
+| GET    | register                                  | \App\Controllers\Auth\RegisterController::registerView                          |
+| GET    | login                                     | \App\Controllers\Auth\LoginController::loginView                                |
+| GET    | login/magic-link                          | \App\Controllers\Auth\MagicLinkController::loginView                            |
+| GET    | login/verify-magic-link                   | \App\Controllers\Auth\MagicLinkController::verify                               |
+| GET    | logout                                    | \Sparks\Shield\Controllers\LoginController::logoutAction                        |
+| GET    | auth/a/show                               | \Sparks\Shield\Controllers\ActionController::show                               |
+| GET    | /                                         | \App\Controllers\Home::index                                                    |
+| GET    | swagger                                   | \App\Controllers\Swagger::index                                                 |
+| GET    | api/users                                 | \App\Modules\Api\Controllers\Users::index                                       |
+| GET    | api/users/new                             | \App\Modules\Api\Controllers\Users::new                                         |
+| GET    | api/users/(.*)/edit                       | \App\Modules\Api\Controllers\Users::edit/$1                                     |
+| GET    | api/users/(.*)                            | \App\Modules\Api\Controllers\Users::show/$1                                     |
+| GET    | admin                                     | \Bonfire\Controllers\Dashboard::index                                           |
+| GET    | admin/settings/email                      | \Bonfire\Modules\Email\Controllers\EmailSettingsController::index               |
+| GET    | admin/settings/users                      | \Bonfire\Modules\Users\Controllers\UserSettingsController::index                |
+| GET    | admin/users                               | \Bonfire\Modules\Users\Controllers\UserController::list                         |
+| GET    | admin/users/new                           | \Bonfire\Modules\Users\Controllers\UserController::create                       |
+| GET    | admin/users/([0-9]+)                      | \Bonfire\Modules\Users\Controllers\UserController::edit/$1                      |
+| GET    | admin/users/([0-9]+)/delete               | \Bonfire\Modules\Users\Controllers\UserController::delete/$1                    |
+| GET    | admin/users/([0-9]+)/security             | \Bonfire\Modules\Users\Controllers\UserController::security/$1                  |
+| GET    | admin/users/([0-9]+)/permissions          | \Bonfire\Modules\Users\Controllers\UserController::permissions/$1               |
+| GET    | admin/settings/groups                     | \Bonfire\Modules\Groups\Controllers\GroupSettingsController::list               |
+| GET    | admin/settings/groups/([^/]+)             | \Bonfire\Modules\Groups\Controllers\GroupSettingsController::show/$1            |
+| GET    | admin/settings/groups/([^/]+)/permissions | \Bonfire\Modules\Groups\Controllers\GroupSettingsController::permissions/$1     |
+| GET    | assets/(.*)                               | \Bonfire\Assets\Controllers\AssetController::serve/$1                           |
+| GET    | admin/tools/system-info                   | \Bonfire\Tools\Controllers\SystemInfoController::index                          |
+| GET    | admin/tools/php-info                      | \Bonfire\Tools\Controllers\SystemInfoController::phpInfo                        |
+| GET    | admin/tools/logs                          | \Bonfire\Tools\Controllers\LogsController::index                                |
+| GET    | admin/tools/view-log/([^/]+)              | \Bonfire\Tools\Controllers\LogsController::view/$1                              |
+| GET    | admin/settings/general                    | \Bonfire\Modules\Settings\Controllers\GeneralSettingsController::general        |
+| GET    | admin/settings/timezones                  | \Bonfire\Modules\Settings\Controllers\GeneralSettingsController::getTimezones   |
+| GET    | admin/guides                              | \Bonfire\Guides\Controllers\GuidesController::viewCollections                   |
+| GET    | admin/guides/([^/]+)                      | \Bonfire\Guides\Controllers\GuidesController::viewCollection/$1                 |
+| GET    | admin/guides/([^/]+)/(.*)                 | \Bonfire\Guides\Controllers\GuidesController::viewSingle/$1/$2                  |
+| GET    | admin/masjid/pengurus                     | \Bonfire\Modules\Masjid\Controllers\PengurusController::index                   |
+| GET    | admin/masjid/pengurus/new                 | \Bonfire\Modules\Masjid\Controllers\PengurusController::new                     |
+| GET    | admin/masjid/pengurus/(.*)/edit           | \Bonfire\Modules\Masjid\Controllers\PengurusController::edit/$1                 |
+| GET    | admin/masjid/pengurus/(.*)                | \Bonfire\Modules\Masjid\Controllers\PengurusController::show/$1                 |
+| GET    | admin/masjid/jabatan                      | \Bonfire\Modules\Masjid\Controllers\JabatanController::index                    |
+| GET    | admin/masjid/jabatan/new                  | \Bonfire\Modules\Masjid\Controllers\JabatanController::new                      |
+| GET    | admin/masjid/jabatan/(.*)/edit            | \Bonfire\Modules\Masjid\Controllers\JabatanController::edit/$1                  |
+| GET    | admin/masjid/jabatan/(.*)                 | \Bonfire\Modules\Masjid\Controllers\JabatanController::show/$1                  |
+| POST   | login/magic-link                          | \App\Controllers\Auth\MagicLinkController::loginAction                          |
+| POST   | register                                  | \Sparks\Shield\Controllers\RegisterController::registerAction                   |
+| POST   | login                                     | \Sparks\Shield\Controllers\LoginController::loginAction                         |
+| POST   | auth/a/handle                             | \Sparks\Shield\Controllers\ActionController::handle                             |
+| POST   | auth/a/verify                             | \Sparks\Shield\Controllers\ActionController::verify                             |
+| POST   | api/auth/login                            | \App\Modules\Api\Controllers\Auth\LoginController::action                       |
+| POST   | api/auth/register                         | \App\Modules\Api\Controllers\Auth\RegisterController::action                    |
+| POST   | api/users                                 | \App\Modules\Api\Controllers\Users::create                                      |
+| POST   | admin/settings/email                      | \Bonfire\Modules\Email\Controllers\EmailSettingsController::save                |
+| POST   | admin/settings/users                      | \Bonfire\Modules\Users\Controllers\UserSettingsController::save                 |
+| POST   | admin/users                               | \Bonfire\Modules\Users\Controllers\UserController::list                         |
+| POST   | admin/users/([0-9]+)/save                 | \Bonfire\Modules\Users\Controllers\UserController::save/$1                      |
+| POST   | admin/users/save                          | \Bonfire\Modules\Users\Controllers\UserController::save                         |
+| POST   | admin/users/([0-9]+)/permissions          | \Bonfire\Modules\Users\Controllers\UserController::savePermissions/$1           |
+| POST   | admin/settings/groups                     | \Bonfire\Modules\Groups\Controllers\GroupSettingsController::save               |
+| POST   | admin/settings/groups/([^/]+)             | \Bonfire\Modules\Groups\Controllers\GroupSettingsController::save/$1            |
+| POST   | admin/settings/groups/([^/]+)/permissions | \Bonfire\Modules\Groups\Controllers\GroupSettingsController::savePermissions/$1 |
+| POST   | admin/tools/logs                          | \Bonfire\Tools\Controllers\LogsController::index                                |
+| POST   | admin/tools/delete-log                    | \Bonfire\Tools\Controllers\LogsController::delete                               |
+| POST   | admin/search                              | \Bonfire\Modules\Search\Controllers\SearchController::overview                  |
+| POST   | admin/settings/general                    | \Bonfire\Modules\Settings\Controllers\GeneralSettingsController::saveGeneral    |
+| POST   | admin/masjid/pengurus                     | \Bonfire\Modules\Masjid\Controllers\PengurusController::create                  |
+| POST   | admin/masjid/jabatan                      | \Bonfire\Modules\Masjid\Controllers\JabatanController::create                   |
+| PATCH  | api/users/(.*)                            | \App\Modules\Api\Controllers\Users::update/$1                                   |
+| PATCH  | admin/masjid/pengurus/(.*)                | \Bonfire\Modules\Masjid\Controllers\PengurusController::update/$1               |
+| PATCH  | admin/masjid/jabatan/(.*)                 | \Bonfire\Modules\Masjid\Controllers\JabatanController::update/$1                |
+| PUT    | api/users/(.*)                            | \App\Modules\Api\Controllers\Users::update/$1                                   |
+| PUT    | admin/masjid/pengurus/(.*)                | \Bonfire\Modules\Masjid\Controllers\PengurusController::update/$1               |
+| PUT    | admin/masjid/jabatan/(.*)                 | \Bonfire\Modules\Masjid\Controllers\JabatanController::update/$1                |
+| DELETE | api/users/(.*)                            | \App\Modules\Api\Controllers\Users::delete/$1                                   |
+| DELETE | admin/masjid/pengurus/(.*)                | \Bonfire\Modules\Masjid\Controllers\PengurusController::delete/$1               |
+| DELETE | admin/masjid/jabatan/(.*)                 | \Bonfire\Modules\Masjid\Controllers\JabatanController::delete/$1                |
+| CLI    | migrations/([^/]+)/([^/]+)                | \CodeIgniter\Commands\MigrationsCommand::$1/$2                                  |
+| CLI    | migrations/([^/]+)                        | \CodeIgniter\Commands\MigrationsCommand::$1                                     |
+| CLI    | migrations                                | \CodeIgniter\Commands\MigrationsCommand::index                                  |
+| CLI    | ci(.*)                                    | \CodeIgniter\CLI\CommandRunner::index/$1                                        |
++--------+-------------------------------------------+---------------------------------------------------------------------------------+
+

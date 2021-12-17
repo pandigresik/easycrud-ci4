@@ -1,0 +1,5 @@
+php spark make:crud profile --namespace Bonfire/Masjid --force
+
+# php spark api:generate -p Modules/Api/
+php spark api:generate
+mv app/Controllers/Pengurus.php app/Modules/Api/Controllers

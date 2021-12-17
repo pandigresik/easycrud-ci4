@@ -1,0 +1,17 @@
+<?php namespace App\Models;
+
+use asligresik\easyapi\Models\BaseModel;
+
+class {{modelName}} extends BaseModel
+{
+    protected $table = '{{tableName}}';
+    protected $returnType = 'App\Entities\{{entityName}}';
+    protected $primaryKey = '{{primaryKey}}';
+    protected $useTimestamps = true;  
+    protected $allowedFields = [
+        {{allowFields}}
+    ];
+    protected $validationRules = [
+        {{validationRules}}
+    ];   
+}

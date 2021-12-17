@@ -1,0 +1,91 @@
+<?php
+
+namespace App\Commands;
+
+use CodeIgniter\CLI\BaseCommand;
+use CodeIgniter\CLI\CLI;
+use CodeIgniter\CLI\GeneratorTrait;
+
+class CrudGenerator extends BaseCommand
+{
+    use GeneratorTrait;
+    /**
+     * The Command's Group
+     *
+     * @var string
+     */
+    protected $group = 'CodeIgniter';
+
+    /**
+     * The Command's Name
+     *
+     * @var string
+     */
+    protected $name = 'make:crud';
+
+    /**
+     * The Command's Description
+     *
+     * @var string
+     */
+    protected $description = '';
+
+    /**
+     * The Command's Usage
+     *
+     * @var string
+     */
+    protected $usage = 'make:crud-controller <table> [options]';
+
+    /**
+     * The Command's Arguments
+     *
+     * @var array
+     */
+    protected $arguments = [
+        'table' => 'The table name.',
+    ];
+    /**
+     * The Command's Options
+     *
+     * @var array
+     */
+    protected $options = [
+        '--namespace' => 'Name ex. Bonfire/Masjid'
+    ];
+
+    /**
+     * Actually execute a command.
+     *
+     * @param array $params
+     */
+    public function run(array $params)
+    {
+        $table = $params[0];
+        $force = $this->getOption('force') ?? false;
+        $namespace = $this->getOption('namespace') ?? NULL;
+        $name = ucfirst($table).'Controller';
+        $modelName = ucfirst($table).'Filter';
+        // $class = '\\App\\Masjid\\Controllers\\ProfileController';
+        $options = ['force' => $force];
+        if(!empty($namespace)){
+            $options['namespace'] = $namespace;
+            $name = str_replace('/','\\',$namespace).'\\Controllers\\'.$name;
+        }
+        CLI::write($name, 'red');
+        
+        $this->call('make:crud-controller', array_merge([$name], $options));
+        $this->call('make:crud-model-filter', array_merge([$modelName], $options));
+        $listFile = [
+            '_row_info',
+            '_table',
+            'form',
+            'index'
+        ];
+        $options['directory'] = $table;
+        foreach($listFile as $file){            
+            $this->call('make:crud-view', array_merge([$file], $options));
+        }
+        
+    }
+}
