@@ -1,4 +1,4 @@
-<?php namespace App\Entities;
+<?php namespace App\Modules\Api\Entities;
 use asligresik\easyapi\Entities\BaseEntity;
 /**    
 * Class Users

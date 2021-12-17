@@ -1,18 +1,18 @@
-<?php namespace App\Entities;
+<?php namespace App\Modules\Api\Entities;
 use asligresik\easyapi\Entities\BaseEntity;
 /**    
-* Class Pengurus
+* Class Jabatan
 * @OA\Schema(
-*     title="Pengurus",
-*     description="Pengurus"
+*     title="Jabatan",
+*     description="Jabatan"
 * )
 *
 * @OA\Tag(
-*     name="Pengurus",
-*     description="Everything about your Pengurus" 
+*     name="Jabatan",
+*     description="Everything about your Jabatan" 
 * )
 */ 
-class Pengurus extends BaseEntity
+class Jabatan extends BaseEntity
 {
     	/**
 	 * @OA\Property(		 		 		 
@@ -32,23 +32,11 @@ class Pengurus extends BaseEntity
 	 *     type="string",
 	 * 	   format="-",	 
 	 * 	   nullable=false,
-	 * 	   maxLength=255,
+	 * 	   maxLength=60,
 	 * )
 	 *		 
 	 */
 	private $name;
-	/**
-	 * @OA\Property(		 		 		 
-	 *     description="contact",
-	 *     title="contact",
-	 *     type="string",
-	 * 	   format="-",	 
-	 * 	   nullable=false,
-	 * 	   maxLength=255,
-	 * )
-	 *		 
-	 */
-	private $contact;
 	/**
 	 * @OA\Property(		 		 		 
 	 *     description="description",
@@ -56,21 +44,11 @@ class Pengurus extends BaseEntity
 	 *     type="string",
 	 * 	   format="-",	 
 	 * 	   nullable=false,
+	 * 	   maxLength=255,
 	 * )
 	 *		 
 	 */
 	private $description;
-	/**
-	 * @OA\Property(		 		 		 
-	 *     description="jabatan_id",
-	 *     title="jabatan_id",
-	 *     type="integer",
-	 * 	   format="-",	 
-	 * 	   nullable=false,
-	 * )
-	 *		 
-	 */
-	private $jabatan_id;
 	/**
 	 * @OA\Property(		 		 		 
 	 *     description="created_at",
@@ -91,21 +69,22 @@ class Pengurus extends BaseEntity
 	 * 	   nullable=false,
 	 * )
 	 *		 
-	 */	
+	 */
+	private $updated_at; 
 }
 /**
  *
  * @OA\RequestBody(
- *     request="Pengurus",
- *     description="Pengurus object that needs to be added", 
- *     @OA\JsonContent(ref="#/components/schemas/Pengurus"),
+ *     request="Jabatan",
+ *     description="Jabatan object that needs to be added", 
+ *     @OA\JsonContent(ref="#/components/schemas/Jabatan"),
  *     @OA\MediaType(
  *         mediaType="application/x-www-form-urlencoded",
- *         @OA\Schema(ref="#/components/schemas/Pengurus")
+ *         @OA\Schema(ref="#/components/schemas/Jabatan")
  *     ),
  *     @OA\MediaType(
  *         mediaType="application/xml",
- *         @OA\Schema(ref="#/components/schemas/Pengurus")
+ *         @OA\Schema(ref="#/components/schemas/Jabatan")
  *     )
  * )
  */

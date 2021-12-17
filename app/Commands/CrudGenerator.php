@@ -85,7 +85,9 @@ class CrudGenerator extends BaseCommand
         $options['directory'] = $table;
         foreach($listFile as $file){            
             $this->call('make:crud-view', array_merge([$file], $options));
-        }
+        }        
         
-    }
+        /** generate api & models */
+        $this->call('api:generate',['-t' => $table, '-p' => 'Modules/Api/']);
+    }   
 }

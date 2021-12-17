@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Models;
+namespace App\Modules\Api\Models;
 
-use App\Entities\User;
+use App\Modules\Api\Entities\User;
 use Faker\Generator;
 use Sparks\Shield\Models\UserModel as ShieldUsers;
 

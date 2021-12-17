@@ -2,7 +2,7 @@
 
 namespace App\Modules\Api\Controllers\Auth;
 
-use App\Entities\User;
+use App\Modules\Api\Entities\User;
 use App\Modules\Api\Traits\HasTokenTrait;
 use CodeIgniter\RESTful\ResourceController;
 

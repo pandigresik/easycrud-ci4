@@ -3,7 +3,7 @@
 namespace App\Modules\Masjid\Controllers;
 
 use App\Controllers\AdminCrudController;
-use App\Models\ProfileModel;
+use App\Modules\Api\Models\ProfileModel;
 use App\Modules\Masjid\Controllers\Models\ProfileFilter;
 
 class ProfileController extends AdminCrudController
@@ -12,7 +12,7 @@ class ProfileController extends AdminCrudController
     protected $viewPrefix = 'App\Modules\Masjid\Views\profile\\';
     protected $baseRoute = 'admin/masjid/profile';
     protected $langModel = 'profile';
-    protected $modelName = 'App\Models\ProfileModel';
+    protected $modelName = 'App\Modules\Api\Models\ProfileModel';
     public function index(){
         return parent::index();
     }

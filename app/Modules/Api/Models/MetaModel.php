@@ -9,7 +9,7 @@
  * the LICENSE file that was distributed with this source code.
  */
 
-namespace App\Models;
+namespace App\Modules\Api\Models;
 
 use CodeIgniter\Model;
 

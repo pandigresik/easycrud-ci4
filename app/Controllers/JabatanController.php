@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Masjid\Controllers;
+namespace App\Controllers;
 
 use App\Controllers\AdminCrudController;
-use App\Modules\Api\Models\JabatanModel;
-use App\Modules\Masjid\Models\JabatanFilter;
+use App\Models\JabatanFilter;
+use App\Models\JabatanModel;
 use IlluminateAgnostic\Arr\Support\Arr;
 
 class JabatanController extends AdminCrudController

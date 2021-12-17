@@ -13,7 +13,7 @@ namespace App\Modules\Users\Controllers;
 
 use App\Controllers\AdminController;
 use App\Entities\User;
-use App\Models\UserModel;
+use App\Modules\Api\Models\UserModel;
 use App\Modules\Users\Models\UserFilter;
 use CodeIgniter\Database\Exceptions\DataException;
 use Sparks\Shield\Models\LoginModel;

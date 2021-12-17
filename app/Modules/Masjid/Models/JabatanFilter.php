@@ -2,7 +2,7 @@
 
 namespace App\Modules\Masjid\Models;
 
-use App\Models\JabatanModel;
+use App\Modules\Api\Models\JabatanModel;
 use App\Traits\Filterable;
 
 class JabatanFilter extends JabatanModel

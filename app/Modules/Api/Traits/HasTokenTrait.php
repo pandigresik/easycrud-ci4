@@ -24,7 +24,7 @@ use Config\Services;
  * @property IncomingRequest $request
  * @property Response        $response
  */
-use App\Entities\User;
+use App\Modules\Api\Entities\User;
 use Sparks\Shield\Entities\AccessToken;
 
 trait HasTokenTrait

@@ -2,7 +2,7 @@
 
 namespace App\Modules\Masjid\Models;
 
-use App\Models\ProfileModel;
+use App\Modules\Api\Models\ProfileModel;
 use App\Traits\Filterable;
 
 class ProfileFilter extends ProfileModel

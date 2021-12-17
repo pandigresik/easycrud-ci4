@@ -3,7 +3,7 @@
 use asligresik\easyapi\Controllers\BaseResourceController;
 class Pengurus extends BaseResourceController
 {
-    protected $modelName = 'App\Models\PengurusModel';  
+    protected $modelName = 'App\Modules\Api\Models\PengurusModel';  
 
      /**
      * @OA\Get(

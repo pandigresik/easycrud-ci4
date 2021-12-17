@@ -4,7 +4,7 @@ namespace {namespace};
 
 use App\Controllers\AdminCrudController;
 use IlluminateAgnostic\Arr\Support\Arr;
-use App\Models\{model}Model;
+use App\Modules\Api\Models\{model}Model;
 use {filterNamespace}\Models\{model}Filter;
 
 class {class} extends AdminCrudController

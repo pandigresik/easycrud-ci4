@@ -2,7 +2,7 @@
 
 namespace App\Modules\Masjid\Models;
 
-use App\Models\PengurusModel;
+use App\Modules\Api\Models\PengurusModel;
 use App\Traits\Filterable;
 
 class PengurusFilter extends PengurusModel

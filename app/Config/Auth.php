@@ -315,5 +315,5 @@ class Auth extends ShieldAuth
      * By default, this is the included UserModel, which
      * works with any of the database engines supported by CodeIgniter.
      */
-    public $userProvider = 'App\Models\UserModel';
+    public $userProvider = 'App\Modules\Api\Models\UserModel';
 }

@@ -11,7 +11,7 @@
 
 namespace App\Modules\Users;
 
-use App\Models\UserModel;
+use App\Modules\Api\Models\UserModel;
 use App\Modules\Search\Interfaces\SearchProviderInterface;
 
 class SearchProvider extends UserModel implements SearchProviderInterface

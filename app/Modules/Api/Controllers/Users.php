@@ -3,7 +3,7 @@
 use asligresik\easyapi\Controllers\BaseResourceController;
 class Users extends BaseResourceController
 {
-    protected $modelName = 'App\Models\UsersModel';  
+    protected $modelName = 'App\Modules\Api\Models\UsersModel';  
 
      /**
      * @OA\Get(

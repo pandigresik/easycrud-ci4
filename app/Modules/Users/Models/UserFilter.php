@@ -11,7 +11,7 @@
 
 namespace App\Modules\Users\Models;
 
-use App\Models\UserModel;
+use App\Modules\Api\Models\UserModel;
 use App\Traits\Filterable;
 use CodeIgniter\I18n\Time;
 

@@ -1,4 +1,4 @@
-<?php namespace App\Models;
+<?php namespace App\Modules\Api\Models;
 
 use asligresik\easyapi\Models\BaseModel;
 

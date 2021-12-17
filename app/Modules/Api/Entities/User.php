@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Entities;
+namespace App\Modules\Api\Entities;
 
 use App\Traits\HasMeta;
 use Sparks\Shield\Entities\User as ShieldUser;

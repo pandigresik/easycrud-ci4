@@ -11,7 +11,7 @@
 
 namespace App\Modules\Recycler\Config;
 
-use App\Models\UserModel;
+use App\Modules\Api\Models\UserModel;
 use CodeIgniter\Config\BaseConfig;
 
 class Recycler extends BaseConfig

@@ -11,6 +11,14 @@ Starter application with crud generator, adpoted from https://github.com/lonniee
 - setting configuration .env
 - php spark migrate --all
 
+## Custom template command
+
+- You can override default template on folder app/Commands/Views/view and app/Commands/API/template
+
+## Usage
+
+- php spark make:crud <tablename> --namespace <your namespace> --force
+
 ## Setting multiple domains (example)
 
 - copy domains-example to domains
@@ -28,3 +36,7 @@ This currently has the same requirements as CodeIgniter 4.
 - [Alpine.js](https://alpinejs.dev/) handles interactivity within the page for the admin area.
 - [htmx](https://htmx.org/) provides AJAX form handling, and more.
 - [Tatter/Alerts](https://github.com/tattersoftware/codeigniter4-alerts) CodeIgniter library for simple user alerts.
+
+## Support
+
+- for professional support you can [chat me on +6285733659400](https://wa.me/6285733659400)

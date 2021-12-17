@@ -1,11 +1,11 @@
-<?php namespace App\Models;
+<?php namespace App\Modules\Api\Models;
 
 use asligresik\easyapi\Models\BaseModel;
 
 class UsersModel extends BaseModel
 {
     protected $table = 'users';
-    protected $returnType = 'App\Entities\Users';
+    protected $returnType = 'App\Modules\Api\Entities\Users';
     protected $primaryKey = 'id';    
     protected $allowedFields = [
         'username',

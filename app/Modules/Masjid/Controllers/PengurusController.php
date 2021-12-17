@@ -3,7 +3,7 @@
 namespace App\Modules\Masjid\Controllers;
 
 use App\Controllers\AdminCrudController;
-use App\Models\PengurusModel;
+use App\Modules\Api\Models\PengurusModel;
 use App\Modules\Masjid\Models\PengurusFilter;
 use IlluminateAgnostic\Arr\Support\Arr;
 
@@ -13,7 +13,7 @@ class PengurusController extends AdminCrudController
     protected $viewPrefix = 'App\Modules\Masjid\Views\pengurus\\';
     protected $baseRoute = 'admin/masjid/pengurus';
     protected $langModel = 'pengurus';
-    protected $modelName = 'App\Models\PengurusModel';
+    protected $modelName = 'App\Modules\Api\Models\PengurusModel';
     public function index(){
         return parent::index();
     }
@@ -65,7 +65,7 @@ class PengurusController extends AdminCrudController
             }
             $dataEdit['data'] = $data;
         }                
-            $dataEdit['jabatanItems'] = Arr::pluck(model('App\Models\JabatanModel')->select(['id as key','name as text'])->asArray()->findAll(), 'text', 'key');        
+            $dataEdit['jabatanItems'] = Arr::pluck(model('App\Modules\Api\Models\JabatanModel')->select(['id as key','name as text'])->asArray()->findAll(), 'text', 'key');        
         return $dataEdit;
     }
 }
