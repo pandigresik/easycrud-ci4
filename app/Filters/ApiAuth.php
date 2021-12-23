@@ -25,7 +25,7 @@ class ApiAuth implements FilterInterface
      * @return mixed
      */
     public function before(RequestInterface $request, $arguments = null)
-    {
+    {        
         helper('auth');
         // log_message('error', $request->getHeaderLine('Authorization'));
         $result = auth('tokens')->authenticate([

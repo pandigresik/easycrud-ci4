@@ -3,7 +3,7 @@
 use asligresik\easyapi\Controllers\BaseResourceController;
 class Jabatans extends BaseResourceController
 {
-    protected $modelName = 'App\Models\JabatanModel';  
+    protected $modelName = 'App\Modules\Api\Models\JabatanModel';  
 
      /**
      * @OA\Get(

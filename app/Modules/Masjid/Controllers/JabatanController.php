@@ -13,7 +13,7 @@ class JabatanController extends AdminCrudController
     protected $viewPrefix = 'App\Modules\Masjid\Views\jabatan\\';
     protected $baseRoute = 'admin/masjid/jabatan';
     protected $langModel = 'jabatan';
-    protected $modelName = 'App\Models\JabatanModel';
+    protected $modelName = 'App\Modules\Api\Models\JabatanModel';
     public function index(){
         return parent::index();
     }

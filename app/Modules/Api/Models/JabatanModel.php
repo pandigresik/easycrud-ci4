@@ -5,7 +5,7 @@ use asligresik\easyapi\Models\BaseModel;
 class JabatanModel extends BaseModel
 {
     protected $table = 'jabatan';
-    protected $returnType = 'App\Entities\Jabatan';
+    protected $returnType = 'App\Modules\Api\Entities\Jabatan';
     protected $primaryKey = 'id';
     protected $useTimestamps = true;  
     protected $allowedFields = [

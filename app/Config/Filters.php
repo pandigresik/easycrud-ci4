@@ -42,10 +42,11 @@ class Filters extends BaseConfig
     public $globals = [
         'before' => [
             'online' => ['except' => 'site-offline'],
+            'csrf' => ['except' => 'api/*'],
         ],
         'after'  => [
             'toolbar',
-            'consent' => ['except' => ADMIN_AREA.'*'],
+            'consent' => ['except' => [ADMIN_AREA.'*','api/*']],
             // 'honeypot',
         ],
     ];
