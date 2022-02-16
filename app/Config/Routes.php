@@ -40,24 +40,12 @@ service('auth')->routes($routes, ['except' => ['login', 'register']]);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/swagger', 'Swagger::index');
-$routes->post('api/auth/login', '\App\Modules\Api\Controllers\Auth\LoginController::action');
-$routes->post('api/auth/register', '\App\Modules\Api\Controllers\Auth\RegisterController::action');
-$routes->group('api', ['namespace' => '\App\Modules\Api\Controllers', 'filter' => 'api'], function ($routes) {
-    $routes->resource('users');
-    $routes->resource('jabatans');
-    $routes->resource('pengurus');
+
+$routes->group('api',function($routes){
+    $routes->resource('wilayahs');
 });
 
 
-$routes->get('site-offline', static function () {
-    echo view('errors/html/offline.php');
-});
-
-// Bonfire Admin routes
-$routes->group(ADMIN_AREA, ['namespace' => '\App\Controllers'], static function ($routes) {
-    $routes->get('/', 'Dashboard::index');
-});
 /*
  * --------------------------------------------------------------------
  * Additional Routing

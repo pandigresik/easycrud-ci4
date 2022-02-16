@@ -12,13 +12,6 @@ class Home extends BaseController
      */
     public function index()
     {
-        // $db = db_connect();
-        // $fields = $db->getFieldData('pengurus');
-        // $fk = $db->getForeignKeyData('pengurus');
-        //dd($fk);
-        // foreach($fields as $field){
-        //     var_dump($field);
-        // }
         return $this->render('welcome_message');
-    }    
+    }
 }

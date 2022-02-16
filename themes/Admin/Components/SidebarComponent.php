@@ -1,6 +1,6 @@
 <?php
 
-use App\View\Component;
+use Bonfire\View\Component;
 
 /**
  * Class SidebarComponent
@@ -10,9 +10,6 @@ use App\View\Component;
  */
 class SidebarComponent extends Component
 {
-    /**
-     * @return string
-     */
     public function render(): string
     {
         return $this->renderView($this->view, [

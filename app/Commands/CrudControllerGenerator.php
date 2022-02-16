@@ -13,7 +13,7 @@ class CrudControllerGenerator extends ControllerGenerator
      *
      * @var string
      */
-    protected $group = 'CodeIgniter';
+    protected $group = 'Generators';
 
     /**
      * The Command's Name
@@ -62,6 +62,11 @@ class CrudControllerGenerator extends ControllerGenerator
     {
         $this->db = db_connect();
         parent::run($params);        
+    }
+
+    protected function renderTemplate(array $data = []): string
+    {
+        return view("App\\Commands\\Views\\{$this->template}", $data, ['debug' => false]);
     }
 
     /**

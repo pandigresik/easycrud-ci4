@@ -14,7 +14,7 @@ class CrudGenerator extends BaseCommand
      *
      * @var string
      */
-    protected $group = 'CodeIgniter';
+    protected $group = 'Generators';
 
     /**
      * The Command's Name
@@ -28,14 +28,14 @@ class CrudGenerator extends BaseCommand
      *
      * @var string
      */
-    protected $description = '';
+    protected $description = 'Generates full CRUD Admin';
 
     /**
      * The Command's Usage
      *
      * @var string
      */
-    protected $usage = 'make:crud-controller <table> [options]';
+    protected $usage = 'make:crud <table> [options]';
 
     /**
      * The Command's Arguments

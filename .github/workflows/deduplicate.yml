@@ -5,20 +5,20 @@ name: PHPCPD
 on:
   pull_request:
     branches:
-      - 'develop'
+      - "develop"
     paths:
-      - 'app/**'
-      - 'bonfire/**'
-      - 'tests/**'
-      - '.github/workflows/test-phpcpd.yml'
+      - "app/**"
+      - "bonfire/**"
+      - "tests/**"
+      - ".github/workflows/deduplicate.yml"
   push:
     branches:
-      - 'develop'
+      - "develop"
     paths:
-      - 'app/**'
-      - 'bonfire/**'
-      - 'tests/**'
-      - '.github/workflows/test-phpcpd.yml'
+      - "app/**"
+      - "bonfire/**"
+      - "tests/**"
+      - ".github/workflows/deduplicate.yml"
 
 jobs:
   build:
@@ -31,11 +31,9 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.0'
-          tools: phive
-          extensions: intl, json, mbstring, xml
+          php-version: "8.0"
+          tools: phpcpd
+          extensions: dom, mbstring
 
       - name: Detect code duplication
-        run: |
-            sudo phive --no-progress install --global --trust-gpg-keys 4AA394086372C20A phpcpd
-            phpcpd src/ tests/
+        run: phpcpd app/ src/ tests/

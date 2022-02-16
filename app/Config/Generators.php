@@ -27,6 +27,7 @@ class Generators extends BaseConfig
      */
     public $views = [
         'make:command'      => 'CodeIgniter\Commands\Generators\Views\command.tpl.php',
+        'make:config'       => 'CodeIgniter\Commands\Generators\Views\config.tpl.php',
         'make:controller'   => 'CodeIgniter\Commands\Generators\Views\controller.tpl.php',
         'make:entity'       => 'CodeIgniter\Commands\Generators\Views\entity.tpl.php',
         'make:filter'       => 'CodeIgniter\Commands\Generators\Views\filter.tpl.php',
@@ -35,7 +36,5 @@ class Generators extends BaseConfig
         'make:seeder'       => 'CodeIgniter\Commands\Generators\Views\seeder.tpl.php',
         'make:validation'   => 'CodeIgniter\Commands\Generators\Views\validation.tpl.php',
         'session:migration' => 'CodeIgniter\Commands\Generators\Views\migration.tpl.php',
-        'make:crud-controller' => 'App\Commands\Views\controller.tpl.php',
-        'make:crud-model-filter' => 'App\Commands\Views\modelfilter.tpl.php',        
     ];
 }

@@ -1,3 +1,3 @@
-<div class="page-head mt-5 mb-4 ms-2">
+<div class="page-head mt-3 mb-4">
     <?= $slot ?? '' ?>
 </div>

@@ -2,16 +2,18 @@
 
 namespace Config;
 
-use App\Filters\ApiAuth;
-use CodeIgniter\Filters\CSRF;
-use App\Filters\OnlineCheck;
-use CodeIgniter\Filters\Honeypot;
+use App\Filters\Admin;
+use Bonfire\Consent\Filters\ConsentFilter;
+use Bonfire\Filters\OnlineCheck;
 use CodeIgniter\Config\BaseConfig;
-use Sparks\Shield\Filters\ChainAuth;
-use Sparks\Shield\Filters\TokenAuth;
+use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
+use CodeIgniter\Filters\Honeypot;
+use CodeIgniter\Filters\InvalidChars;
+use CodeIgniter\Filters\SecureHeaders;
+use Sparks\Shield\Filters\ChainAuth;
 use Sparks\Shield\Filters\SessionAuth;
-use App\Modules\Consent\Filters\ConsentFilter;
+use Sparks\Shield\Filters\TokenAuth;
 
 class Filters extends BaseConfig
 {
@@ -22,15 +24,18 @@ class Filters extends BaseConfig
      * @var array
      */
     public $aliases = [
-        'csrf'     => CSRF::class,
-        'toolbar'  => DebugToolbar::class,
-        'honeypot' => Honeypot::class,
-        'session'  => SessionAuth::class,
-        'tokens'   => TokenAuth::class,
-        'chain'    => ChainAuth::class,
-        'online'  => OnlineCheck::class,
-        'consent' => ConsentFilter::class,
-        'api'      => ApiAuth::class, 
+        'csrf'          => CSRF::class,
+        'toolbar'       => DebugToolbar::class,
+        'honeypot'      => Honeypot::class,
+        'invalidchars'  => InvalidChars::class,
+        'secureheaders' => SecureHeaders::class,
+        'session'       => SessionAuth::class,
+        'tokens'        => TokenAuth::class,
+        'chain'         => ChainAuth::class,
+        'online'        => OnlineCheck::class,
+        'consent'       => ConsentFilter::class,
+        'admin'         => Admin::class,
+        'api'           => ApiAuth::class, 
     ];
 
     /**
@@ -44,10 +49,12 @@ class Filters extends BaseConfig
             'online' => ['except' => 'site-offline'],
             'csrf' => ['except' => 'api/*'],
         ],
-        'after'  => [
+        'after' => [
+            'alerts',
             'toolbar',
             'consent' => ['except' => [ADMIN_AREA.'*','api/*']],
             // 'honeypot',
+            // 'secureheaders',
         ],
     ];
 
@@ -73,7 +80,10 @@ class Filters extends BaseConfig
      */
     public $filters = [
         'session' => [
-            'before' => [ADMIN_AREA.'*']
+            'before' => [ADMIN_AREA . '*'],
+        ],
+        'admin' => [
+            'before' => [ADMIN_AREA . '*'],
         ],
     ];
 }

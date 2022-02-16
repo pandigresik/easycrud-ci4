@@ -3,7 +3,7 @@
 namespace {namespace};
 
 use App\Modules\Api\Models\{model}Model;
-use App\Traits\Filterable;
+use Bonfire\Traits\Filterable;
 
 class {class} extends {model}Model
 {

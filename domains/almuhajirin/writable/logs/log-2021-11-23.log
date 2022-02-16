@@ -1,0 +1,312 @@
+CRITICAL - 2021-11-23 01:44:04 --> Class 'Bonfire\View\View' not found
+#0 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/BaseService.php(189): Config\Services::renderer()
+#1 /data/docker/codeigniter4/bonfire/app/Config/Services.php(40): CodeIgniter\Config\BaseService::getSharedInstance()
+#2 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/Views.php(81): Config\Services::renderer()
+#3 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Debug/Toolbar.php(62): CodeIgniter\Debug\Toolbar\Collectors\Views->__construct()
+#4 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/Services.php(626): CodeIgniter\Debug\Toolbar->__construct()
+#5 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/BaseService.php(248): CodeIgniter\Config\Services::toolbar()
+#6 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/Services.php(621): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/BaseService.php(248): CodeIgniter\Config\Services::toolbar()
+#9 /data/docker/codeigniter4/bonfire/app/Config/Events.php(48): CodeIgniter\Config\BaseService::__callStatic()
+#10 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#11 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(300): CodeIgniter\Events\Events::trigger()
+#12 /data/docker/codeigniter4/bonfire/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#13 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#14 {main}
+CRITICAL - 2021-11-23 01:44:08 --> Class 'Bonfire\View\View' not found
+#0 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/BaseService.php(189): Config\Services::renderer()
+#1 /data/docker/codeigniter4/bonfire/app/Config/Services.php(40): CodeIgniter\Config\BaseService::getSharedInstance()
+#2 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Debug/Toolbar/Collectors/Views.php(81): Config\Services::renderer()
+#3 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Debug/Toolbar.php(62): CodeIgniter\Debug\Toolbar\Collectors\Views->__construct()
+#4 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/Services.php(626): CodeIgniter\Debug\Toolbar->__construct()
+#5 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/BaseService.php(248): CodeIgniter\Config\Services::toolbar()
+#6 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/BaseService.php(189): CodeIgniter\Config\BaseService::__callStatic()
+#7 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/Services.php(621): CodeIgniter\Config\BaseService::getSharedInstance()
+#8 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Config/BaseService.php(248): CodeIgniter\Config\Services::toolbar()
+#9 /data/docker/codeigniter4/bonfire/app/Config/Events.php(48): CodeIgniter\Config\BaseService::__callStatic()
+#10 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Events/Events.php(149): CodeIgniter\Events\Events::Config\{closure}()
+#11 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(300): CodeIgniter\Events\Events::trigger()
+#12 /data/docker/codeigniter4/bonfire/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#13 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#14 {main}
+CRITICAL - 2021-11-23 01:57:19 --> Undefined index: sidebar
+#0 /data/docker/codeigniter4/bonfire/bonfire/Libraries/Menus/Manager.php(44): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/bonfire/themes/Admin/Components/SidebarComponent.php(19): Bonfire\Libraries\Menus\Manager->menu()
+#2 /data/docker/codeigniter4/bonfire/bonfire/View/ComponentRenderer.php(94): SidebarComponent->render()
+#3 [internal function]: Bonfire\View\ComponentRenderer->Bonfire\View\{closure}()
+#4 /data/docker/codeigniter4/bonfire/bonfire/View/ComponentRenderer.php(88): preg_replace_callback()
+#5 /data/docker/codeigniter4/bonfire/bonfire/View/ComponentRenderer.php(31): Bonfire\View\ComponentRenderer->renderSelfClosingTags()
+#6 /data/docker/codeigniter4/bonfire/bonfire/View/View.php(116): Bonfire\View\ComponentRenderer->render()
+#7 /data/docker/codeigniter4/bonfire/bonfire/View/View.php(111): Bonfire\View\View->render()
+#8 /data/docker/codeigniter4/bonfire/bonfire/View/Themeable.php(32): Bonfire\View\View->render()
+#9 /data/docker/codeigniter4/bonfire/bonfire/Modules/Settings/Controllers/GeneralSettingsController.php(50): App\Controllers\BaseController->render()
+#10 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(824): Bonfire\Modules\Settings\Controllers\GeneralSettingsController->general()
+#11 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#12 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#13 /data/docker/codeigniter4/bonfire/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#14 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#15 {main}
+CRITICAL - 2021-11-23 02:06:19 --> Call to a member function routes() on null
+#0 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(705): require()
+#1 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(359): CodeIgniter\CodeIgniter->tryToRouteIt()
+#2 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#3 /data/docker/codeigniter4/bonfire/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#4 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#5 {main}
+CRITICAL - 2021-11-23 08:39:19 --> Undefined index: 
+#0 /data/docker/codeigniter4/bonfire/bonfire/Modules/Assets/Controllers/AssetController.php(51): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(824): Bonfire\Assets\Controllers\AssetController->serve()
+#2 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#3 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#4 /data/docker/codeigniter4/bonfire/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#6 {main}
+CRITICAL - 2021-11-23 08:39:19 --> Undefined index: swagger
+#0 /data/docker/codeigniter4/bonfire/bonfire/Modules/Assets/Controllers/AssetController.php(51): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(824): Bonfire\Assets\Controllers\AssetController->serve()
+#2 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#3 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#4 /data/docker/codeigniter4/bonfire/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#6 {main}
+CRITICAL - 2021-11-23 08:39:19 --> Undefined index: swagger
+#0 /data/docker/codeigniter4/bonfire/bonfire/Modules/Assets/Controllers/AssetController.php(51): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(824): Bonfire\Assets\Controllers\AssetController->serve()
+#2 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#3 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#4 /data/docker/codeigniter4/bonfire/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#6 {main}
+CRITICAL - 2021-11-23 08:39:50 --> Undefined index: 
+#0 /data/docker/codeigniter4/bonfire/bonfire/Modules/Assets/Controllers/AssetController.php(51): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(824): Bonfire\Assets\Controllers\AssetController->serve()
+#2 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#3 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#4 /data/docker/codeigniter4/bonfire/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#6 {main}
+CRITICAL - 2021-11-23 08:39:50 --> Undefined index: swagger
+#0 /data/docker/codeigniter4/bonfire/bonfire/Modules/Assets/Controllers/AssetController.php(51): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(824): Bonfire\Assets\Controllers\AssetController->serve()
+#2 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#3 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#4 /data/docker/codeigniter4/bonfire/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#6 {main}
+CRITICAL - 2021-11-23 08:39:50 --> Undefined index: swagger
+#0 /data/docker/codeigniter4/bonfire/bonfire/Modules/Assets/Controllers/AssetController.php(51): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(824): Bonfire\Assets\Controllers\AssetController->serve()
+#2 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#3 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#4 /data/docker/codeigniter4/bonfire/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 /data/docker/codeigniter4/bonfire/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#6 {main}
+CRITICAL - 2021-11-23 08:45:02 --> Cannot declare class App\Modeules\Api\Controllers\Users, because the name is already in use
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2021-11-23 08:45:20 --> SELECT *
+FROM `users`
+ LIMIT 10
+CRITICAL - 2021-11-23 08:45:28 --> SELECT *
+FROM `users`
+ LIMIT 10
+CRITICAL - 2021-11-23 08:45:30 --> SELECT *
+FROM `users`
+ LIMIT 10
+CRITICAL - 2021-11-23 08:45:30 --> SELECT *
+FROM `users`
+ LIMIT 10
+CRITICAL - 2021-11-23 08:46:33 --> SELECT *
+FROM `users`
+ LIMIT 10
+CRITICAL - 2021-11-23 08:46:34 --> SELECT *
+FROM `users`
+ LIMIT 10
+CRITICAL - 2021-11-23 08:46:55 --> SELECT *
+FROM `users`
+ LIMIT 10
+CRITICAL - 2021-11-23 21:48:49 --> SELECT *
+FROM `users`
+ LIMIT 10
+ERROR - 2021-11-23 22:00:10 --> ErrorException: pg_query(): Query failed: ERROR:  relation &quot;settings&quot; does not exist
+LINE 2: FROM &quot;settings&quot;
+             ^ in /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php:136
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php(136): pg_query()
+#2 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute()
+#3 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#4 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query()
+#5 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(150): CodeIgniter\Database\BaseBuilder->get()
+#6 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(50): Sparks\Settings\Handlers\DatabaseHandler->hydrate()
+#7 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/settings/src/Settings.php(63): Sparks\Settings\Handlers\DatabaseHandler->get()
+#8 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(22): Sparks\Settings\Settings->get()
+#9 /data/docker/codeigniter4/easyAPI/bonfire/Filters/OnlineCheck.php(26): setting()
+#10 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Filters/Filters.php(173): Bonfire\Filters\OnlineCheck->before()
+#11 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(384): CodeIgniter\Filters\Filters->run()
+#12 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#13 /data/docker/codeigniter4/easyAPI/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#14 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#15 {main}
+CRITICAL - 2021-11-23 22:00:10 --> pg_query(): Query failed: ERROR:  relation &quot;settings&quot; does not exist
+LINE 2: FROM &quot;settings&quot;
+             ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php(136): pg_query()
+#2 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute()
+#3 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#4 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1443): CodeIgniter\Database\BaseConnection->query()
+#5 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(150): CodeIgniter\Database\BaseBuilder->get()
+#6 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/settings/src/Handlers/DatabaseHandler.php(50): Sparks\Settings\Handlers\DatabaseHandler->hydrate()
+#7 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/settings/src/Settings.php(63): Sparks\Settings\Handlers\DatabaseHandler->get()
+#8 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/settings/src/Helpers/setting_helper.php(22): Sparks\Settings\Settings->get()
+#9 /data/docker/codeigniter4/easyAPI/bonfire/Filters/OnlineCheck.php(26): setting()
+#10 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Filters/Filters.php(173): Bonfire\Filters\OnlineCheck->before()
+#11 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(384): CodeIgniter\Filters\Filters->run()
+#12 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#13 /data/docker/codeigniter4/easyAPI/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#14 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Commands/Server/rewrite.php(43): require_once('/data/docker/co...')
+#15 {main}
+ERROR - 2021-11-23 22:01:35 --> ErrorException: pg_query(): Query failed: ERROR:  relation "users_username" already exists in /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php:136
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php(136): pg_query()
+#2 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute()
+#3 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#4 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Forge.php(521): CodeIgniter\Database\BaseConnection->query()
+#5 /data/docker/codeigniter4/easyAPI/vendor/lonnieezell/codigniter-shield/src/Database/Migrations/2020-12-28-223112_create_auth_tables.php(65): CodeIgniter\Database\Forge->createTable()
+#6 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(863): Sparks\Shield\Database\Migrations\CreateAuthTables->up()
+#7 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(186): CodeIgniter\Database\MigrationRunner->migrate()
+#8 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest()
+#9 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Commands.php(63): CodeIgniter\Commands\Database\Migrate->run()
+#10 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Common.php(184): CodeIgniter\CLI\Commands->run()
+#11 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(128): command()
+#12 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(66): Bonfire\Commands\Install->migrate()
+#13 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Commands.php(63): Bonfire\Commands\Install->run()
+#14 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(70): CodeIgniter\CLI\Commands->run()
+#15 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(56): CodeIgniter\CLI\CommandRunner->index()
+#16 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(822): CodeIgniter\CLI\CommandRunner->_remap()
+#17 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#18 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#19 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#20 /data/docker/codeigniter4/easyAPI/spark(65): CodeIgniter\CLI\Console->run()
+#21 {main}
+ERROR - 2021-11-23 22:02:14 --> ErrorException: pg_query(): Query failed: ERROR:  column "first_name" of relation "users" does not exist
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "username", ...
+                             ^ in /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php:136
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php(136): pg_query()
+#2 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute()
+#3 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#4 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query()
+#5 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#6 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/BaseModel.php(738): CodeIgniter\Model->doInsert()
+#7 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Model.php(620): CodeIgniter\BaseModel->insert()
+#8 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/BaseModel.php(658): CodeIgniter\Model->insert()
+#9 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(149): CodeIgniter\BaseModel->save()
+#10 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(67): Bonfire\Commands\Install->createUser()
+#11 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Commands.php(63): Bonfire\Commands\Install->run()
+#12 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(70): CodeIgniter\CLI\Commands->run()
+#13 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(56): CodeIgniter\CLI\CommandRunner->index()
+#14 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(822): CodeIgniter\CLI\CommandRunner->_remap()
+#15 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#16 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#17 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#18 /data/docker/codeigniter4/easyAPI/spark(65): CodeIgniter\CLI\Console->run()
+#19 {main}
+CRITICAL - 2021-11-23 22:02:14 --> pg_query(): Query failed: ERROR:  column "first_name" of relation "users" does not exist
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "username", ...
+                             ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php(136): pg_query()
+#2 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute()
+#3 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#4 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query()
+#5 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#6 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/BaseModel.php(738): CodeIgniter\Model->doInsert()
+#7 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Model.php(620): CodeIgniter\BaseModel->insert()
+#8 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/BaseModel.php(658): CodeIgniter\Model->insert()
+#9 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(149): CodeIgniter\BaseModel->save()
+#10 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(67): Bonfire\Commands\Install->createUser()
+#11 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Commands.php(63): Bonfire\Commands\Install->run()
+#12 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(70): CodeIgniter\CLI\Commands->run()
+#13 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(56): CodeIgniter\CLI\CommandRunner->index()
+#14 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(822): CodeIgniter\CLI\CommandRunner->_remap()
+#15 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#16 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#17 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#18 /data/docker/codeigniter4/easyAPI/spark(65): CodeIgniter\CLI\Console->run()
+#19 {main}
+ERROR - 2021-11-23 22:08:25 --> ErrorException: pg_query(): Query failed: ERROR:  relation "users_username" already exists in /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php:136
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php(136): pg_query()
+#2 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute()
+#3 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#4 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Forge.php(521): CodeIgniter\Database\BaseConnection->query()
+#5 /data/docker/codeigniter4/easyAPI/vendor/lonnieezell/codigniter-shield/src/Database/Migrations/2020-12-28-223112_create_auth_tables.php(65): CodeIgniter\Database\Forge->createTable()
+#6 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(863): Sparks\Shield\Database\Migrations\CreateAuthTables->up()
+#7 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(186): CodeIgniter\Database\MigrationRunner->migrate()
+#8 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest()
+#9 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Commands.php(63): CodeIgniter\Commands\Database\Migrate->run()
+#10 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Common.php(184): CodeIgniter\CLI\Commands->run()
+#11 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(128): command()
+#12 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(66): Bonfire\Commands\Install->migrate()
+#13 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Commands.php(63): Bonfire\Commands\Install->run()
+#14 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(70): CodeIgniter\CLI\Commands->run()
+#15 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(56): CodeIgniter\CLI\CommandRunner->index()
+#16 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(822): CodeIgniter\CLI\CommandRunner->_remap()
+#17 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#18 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#19 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#20 /data/docker/codeigniter4/easyAPI/spark(65): CodeIgniter\CLI\Console->run()
+#21 {main}
+ERROR - 2021-11-23 22:08:45 --> ErrorException: pg_query(): Query failed: ERROR:  column "first_name" of relation "users" does not exist
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "username", ...
+                             ^ in /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php:136
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php(136): pg_query()
+#2 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute()
+#3 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#4 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query()
+#5 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#6 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/BaseModel.php(738): CodeIgniter\Model->doInsert()
+#7 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Model.php(620): CodeIgniter\BaseModel->insert()
+#8 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/BaseModel.php(658): CodeIgniter\Model->insert()
+#9 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(149): CodeIgniter\BaseModel->save()
+#10 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(67): Bonfire\Commands\Install->createUser()
+#11 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Commands.php(63): Bonfire\Commands\Install->run()
+#12 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(70): CodeIgniter\CLI\Commands->run()
+#13 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(56): CodeIgniter\CLI\CommandRunner->index()
+#14 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(822): CodeIgniter\CLI\CommandRunner->_remap()
+#15 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#16 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#17 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#18 /data/docker/codeigniter4/easyAPI/spark(65): CodeIgniter\CLI\Console->run()
+#19 {main}
+CRITICAL - 2021-11-23 22:08:45 --> pg_query(): Query failed: ERROR:  column "first_name" of relation "users" does not exist
+LINE 1: INSERT INTO "users" ("first_name", "last_name", "username", ...
+                             ^
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/Postgre/Connection.php(136): pg_query()
+#2 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(670): CodeIgniter\Database\Postgre\Connection->execute()
+#3 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery()
+#4 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1759): CodeIgniter\Database\BaseConnection->query()
+#5 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Model.php(239): CodeIgniter\Database\BaseBuilder->insert()
+#6 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/BaseModel.php(738): CodeIgniter\Model->doInsert()
+#7 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/Model.php(620): CodeIgniter\BaseModel->insert()
+#8 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/BaseModel.php(658): CodeIgniter\Model->insert()
+#9 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(149): CodeIgniter\BaseModel->save()
+#10 /data/docker/codeigniter4/easyAPI/bonfire/Commands/Install.php(67): Bonfire\Commands\Install->createUser()
+#11 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Commands.php(63): Bonfire\Commands\Install->run()
+#12 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(70): CodeIgniter\CLI\Commands->run()
+#13 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/CommandRunner.php(56): CodeIgniter\CLI\CommandRunner->index()
+#14 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(822): CodeIgniter\CLI\CommandRunner->_remap()
+#15 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(410): CodeIgniter\CodeIgniter->runController()
+#16 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CodeIgniter.php(318): CodeIgniter\CodeIgniter->handleRequest()
+#17 /data/docker/codeigniter4/easyAPI/vendor/codeigniter4/framework/system/CLI/Console.php(48): CodeIgniter\CodeIgniter->run()
+#18 /data/docker/codeigniter4/easyAPI/spark(65): CodeIgniter\CLI\Console->run()
+#19 {main}

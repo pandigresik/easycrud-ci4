@@ -3,7 +3,7 @@
 namespace App\Modules\Masjid;
 
 use App\Config\BaseModule;
-use App\Libraries\Menus\MenuItem;
+use Bonfire\Libraries\Menus\MenuItem;
 
 /**
  * Pengurus Module setup.
@@ -14,12 +14,12 @@ class Module extends BaseModule
      * Setup our admin area needs.
      */
     public function initAdmin()
-    {
+    {    
         helper('url');
         // Settings menu for sidebar
         $sidebar = service('menus');
 
-        // Content Menu for sidebar
+        // Content Menu for sidebar        
         $pengurusItem = new MenuItem([
             'title' => 'Pengurus',
             'url' => url_to('App\Modules\Masjid\Controllers\PengurusController::index'),

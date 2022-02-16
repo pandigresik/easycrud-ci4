@@ -5,7 +5,10 @@ namespace Tests\Bonfire\Logs;
 use Bonfire\Modules\Tools\Libraries\Logs;
 use Tests\Support\TestCase;
 
-class LogsTest extends TestCase
+/**
+ * @internal
+ */
+final class LogsTest extends TestCase
 {
     /**
      * @var string
@@ -17,7 +20,7 @@ class LogsTest extends TestCase
      */
     protected $logsPath = WRITEPATH . 'logs/';
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -26,15 +29,19 @@ class LogsTest extends TestCase
         $this->logFileName = 'log-' . date('Y-m-d') . '.log';
     }
 
-    public function testeViewLogFile()
+    public function testViewLogFile()
     {
-        $response = $this->get(ADMIN_AREA . '/tools/view-log/' . $this->logFileName);
+        $user = $this->createUser();
+        $user->addGroup('superadmin');
+
+        $response = $this->actingAs($user)
+            ->get(ADMIN_AREA . '/tools/view-log/' . $this->logFileName);
 
         $response->assertOK();
         $response->assertSee('Logs : ' . date('F j, Y'));
     }
 
-    public function testeListLogsFiles()
+    public function testListLogsFiles()
     {
         $logs = get_filenames($this->logsPath . $this->logFileName);
 
@@ -44,7 +51,7 @@ class LogsTest extends TestCase
         $this->assertEmpty($logs);
     }
 
-    public function testeListFileLogs()
+    public function testListFileLogs()
     {
         $logHandler = new Logs();
 
@@ -69,6 +76,4 @@ class LogsTest extends TestCase
 
         @copy(APPPATH . '/index.html', "{$this->logsPath}index.html");
     }
-
-
 }

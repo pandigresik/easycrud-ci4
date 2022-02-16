@@ -3,7 +3,7 @@
 namespace App\Modules\Masjid\Models;
 
 use App\Modules\Api\Models\ProfileModel;
-use App\Traits\Filterable;
+use Bonfire\Traits\Filterable;
 
 class ProfileFilter extends ProfileModel
 {

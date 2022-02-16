@@ -13,7 +13,6 @@ class Auth extends ShieldAuth
      * AUTHENTICATION
      * ////////////////////////////////////////////////////////////////////
      */
-
     public $views = [
         'layout'                      => 'master',
         'login'                       => '\App\Views\Auth\login',
@@ -41,7 +40,7 @@ class Auth extends ShieldAuth
      */
     public $redirects = [
         'register' => '/',
-        'login'    => '/'. ADMIN_AREA,
+        'login'    => '/' . ADMIN_AREA,
         'logout'   => 'login',
     ];
 
@@ -267,8 +266,9 @@ class Auth extends ShieldAuth
      * cost. This makes the hashing process takes longer.
      */
     public $hashMemoryCost = 2048;  // PASSWORD_ARGON2_DEFAULT_MEMORY_COST;
-    public $hashTimeCost   = 4;       // PASSWORD_ARGON2_DEFAULT_TIME_COST;
-    public $hashThreads    = 4;        // PASSWORD_ARGON2_DEFAULT_THREADS;
+
+    public $hashTimeCost = 4;       // PASSWORD_ARGON2_DEFAULT_TIME_COST;
+    public $hashThreads  = 4;        // PASSWORD_ARGON2_DEFAULT_THREADS;
 
     /**
      * --------------------------------------------------------------------
@@ -315,5 +315,5 @@ class Auth extends ShieldAuth
      * By default, this is the included UserModel, which
      * works with any of the database engines supported by CodeIgniter.
      */
-    public $userProvider = 'App\Modules\Api\Models\UserModel';
+    public $userProvider = 'App\Models\UserModel';
 }

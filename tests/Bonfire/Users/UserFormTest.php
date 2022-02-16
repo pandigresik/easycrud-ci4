@@ -3,25 +3,27 @@
 namespace Tests\Bonfire\Users;
 
 use App\Entities\User;
-use App\Models\UserModel;
-use Faker\Factory;
 use Tests\Support\TestCase;
 
-class UserFormTest extends TestCase
+/**
+ * @internal
+ */
+final class UserFormTest extends TestCase
 {
     protected $refresh = true;
-    protected $namespace = null;
+    protected $namespace;
 
     /**
      * @var User
      */
     protected $user;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
         $this->user = $this->createUser();
+        $this->user->addGroup('superadmin');
     }
 
     public function testCanSeeUserList()

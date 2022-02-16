@@ -7,10 +7,11 @@ parameters:
 		- tests
 	bootstrapFiles:
 		- vendor/codeigniter4/framework/system/Test/bootstrap.php
-	excludes_analyse:
+	excludePaths:
 		- **/Routes.php
 		- **/Views/*
 	ignoreErrors:
+		- '#Call to an undefined method CodeIgniter\\Database\\BaseBuilder::[A-Za-z]+\(\)#'
 	universalObjectCratesClasses:
 		- CodeIgniter\Entity
 		- CodeIgniter\Entity\Entity

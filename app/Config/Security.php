@@ -8,10 +8,32 @@ class Security extends BaseConfig
 {
     /**
      * --------------------------------------------------------------------------
+     * CSRF Protection Method
+     * --------------------------------------------------------------------------
+     *
+     * Protection Method for Cross Site Request Forgery protection.
+     *
+     * @var string 'cookie' or 'session'
+     */
+    public $csrfProtection = 'cookie';
+
+    /**
+     * --------------------------------------------------------------------------
+     * CSRF Token Randomization
+     * --------------------------------------------------------------------------
+     *
+     * Randomize the CSRF Token for added security.
+     *
+     * @var bool
+     */
+    public $tokenRandomize = false;
+
+    /**
+     * --------------------------------------------------------------------------
      * CSRF Token Name
      * --------------------------------------------------------------------------
      *
-     * Token name for Cross Site Request Forgery protection cookie.
+     * Token name for Cross Site Request Forgery protection.
      *
      * @var string
      */
@@ -22,7 +44,7 @@ class Security extends BaseConfig
      * CSRF Header Name
      * --------------------------------------------------------------------------
      *
-     * Token name for Cross Site Request Forgery protection cookie.
+     * Header name for Cross Site Request Forgery protection.
      *
      * @var string
      */
@@ -33,7 +55,7 @@ class Security extends BaseConfig
      * CSRF Cookie Name
      * --------------------------------------------------------------------------
      *
-     * Cookie name for Cross Site Request Forgery protection cookie.
+     * Cookie name for Cross Site Request Forgery protection.
      *
      * @var string
      */
@@ -48,7 +70,7 @@ class Security extends BaseConfig
      *
      * Defaults to two hours (in seconds).
      *
-     * @var integer
+     * @var int
      */
     public $expires = 7200;
 
@@ -57,9 +79,9 @@ class Security extends BaseConfig
      * CSRF Regenerate
      * --------------------------------------------------------------------------
      *
-     * Regenerate CSRF Token on every request.
+     * Regenerate CSRF Token on every submission.
      *
-     * @var boolean
+     * @var bool
      */
     public $regenerate = true;
 
@@ -70,7 +92,7 @@ class Security extends BaseConfig
      *
      * Redirect to previous page with error on failure.
      *
-     * @var boolean
+     * @var bool
      */
     public $redirect = true;
 

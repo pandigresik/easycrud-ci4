@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Auth;
 
-use App\View\Themeable;
+use Bonfire\View\Themeable;
 use Sparks\Shield\Controllers\MagicLinkController as ShieldMagicLinkController;
 
 class MagicLinkController extends ShieldMagicLinkController
