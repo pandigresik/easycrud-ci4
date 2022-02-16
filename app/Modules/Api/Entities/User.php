@@ -2,7 +2,7 @@
 
 namespace App\Modules\Api\Entities;
 
-use App\Traits\HasMeta;
+use Bonfire\Traits\HasMeta;
 use Sparks\Shield\Entities\User as ShieldUser;
 
 class User extends ShieldUser

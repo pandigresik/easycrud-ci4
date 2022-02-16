@@ -68,6 +68,7 @@
 		"deduplicate": "phpcpd app/ bonfire/",
 		"inspect": "deptrac analyze --cache-file=build/deptrac.cache",
 		"style": "php-cs-fixer fix --verbose --ansi --using-cache=no",
+		"swagger-doc":"openapi -o public/assets/api.yaml app",
 		"test": "phpunit"
 	},
 	"support": {

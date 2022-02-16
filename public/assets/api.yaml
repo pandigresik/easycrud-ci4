@@ -554,6 +554,170 @@ paths:
           description: "Pet not found"
       security:
         - bearer_auth: []
+  /wilayahs:
+    get:
+      tags:
+        - Wilayah
+      summary: "Find list Wilayah"
+      description: "Returns list of Wilayah"
+      operationId: getWilayah
+      parameters:
+        - name: search
+          in: query
+          description: "search by column defined"
+          schema:
+            type: object
+        - name: order
+          in: query
+          description: "order by column defined"
+          schema:
+            type: object
+        - name: page
+          in: query
+          description: "page to show"
+          schema:
+            type: int32
+        - name: limit
+          in: query
+          description: "count data display per page"
+          schema:
+            type: int32
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Wilayah" },
+                    }
+                  pagination:
+                    {
+                      properties:
+                        {
+                          currentPage: { type: integer },
+                          totalPage: { type: integer },
+                        },
+                      type: object,
+                    }
+                type: object
+            application/xml:
+              schema:
+                properties:
+                  data:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Wilayah" },
+                    }
+                  pagination:
+                    {
+                      type: array,
+                      items: { $ref: "#/components/schemas/Wilayah" },
+                    }
+                type: object
+        "404":
+          description: "Wilayah not found"
+      security:
+        - bearer_auth: []
+    post:
+      tags:
+        - Wilayah
+      summary: "Add a new Wilayah to the store"
+      operationId: addWilayah
+      requestBody:
+        $ref: "#/components/requestBodies/Wilayah"
+      responses:
+        "201":
+          description: "Created Wilayah"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Wilayah"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Wilayah"
+        "405":
+          description: "Invalid input"
+      security:
+        - bearer_auth: []
+  "/wilayahs/{id}":
+    get:
+      tags:
+        - Wilayah
+      summary: "Find Wilayah by ID"
+      description: "Returns a single Wilayah"
+      operationId: getWilayahById
+      parameters:
+        - name: id
+          in: path
+          description: "ID of Wilayah to return"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Wilayah"
+            application/xml:
+              schema:
+                $ref: "#/components/schemas/Wilayah"
+        "400":
+          description: "Invalid ID supplier"
+        "404":
+          description: "Wilayah not found"
+      security:
+        - bearer_auth: []
+    put:
+      tags:
+        - Wilayah
+      summary: "Update an existing Wilayah"
+      operationId: updateWilayah
+      parameters:
+        - name: id
+          in: path
+          description: "Wilayah id to update"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        $ref: "#/components/requestBodies/Wilayah"
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Wilayah not found"
+        "405":
+          description: "Validation exception"
+      security:
+        - bearer_auth: []
+    delete:
+      tags:
+        - Wilayah
+      summary: "Deletes a Wilayah"
+      operationId: deleteWilayah
+      parameters:
+        - name: id
+          in: path
+          description: "Wilayah id to delete"
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Pet not found"
+      security:
+        - bearer_auth: []
 components:
   schemas:
     Jabatan:
@@ -561,7 +725,7 @@ components:
       description: Jabatan
       properties:
         id:
-          nullable: true
+          nullable: false
           title: id
           description: id
           type: integer
@@ -581,13 +745,13 @@ components:
           format: "-"
           maxLength: 255
         created_at:
-          nullable: true
+          nullable: false
           title: created_at
           description: created_at
           type: string
           format: date
         updated_at:
-          nullable: true
+          nullable: false
           title: updated_at
           description: updated_at
           type: string
@@ -635,7 +799,7 @@ components:
           description: created_at
           type: string
           format: date
-        updated_at:
+        "":
           nullable: false
           title: updated_at
           description: updated_at
@@ -732,6 +896,31 @@ components:
           type: string
           format: date
       type: object
+    Wilayah:
+      title: Wilayah
+      description: Wilayah
+      properties:
+        kode:
+          nullable: false
+          title: kode
+          description: kode
+          type: string
+          format: "-"
+          maxLength: 15
+        nama:
+          nullable: false
+          title: nama
+          description: nama
+          type: string
+          format: "-"
+          maxLength: 70
+        level:
+          nullable: false
+          title: level
+          description: level
+          type: string
+          format: "-"
+      type: object
   requestBodies:
     Jabatan:
       description: "Jabatan object that needs to be added"
@@ -769,11 +958,24 @@ components:
         application/json:
           schema:
             $ref: "#/components/schemas/Users"
+    Wilayah:
+      description: "Wilayah object that needs to be added"
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: "#/components/schemas/Wilayah"
+        application/xml:
+          schema:
+            $ref: "#/components/schemas/Wilayah"
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Wilayah"
   securitySchemes:
     bearer_auth: # arbitrary name for the security scheme
       type: http
       scheme: bearer
       bearerFormat: JWT
+
 tags:
   - name: Jabatan
     description: "Everything about your Jabatan"
@@ -781,3 +983,5 @@ tags:
     description: "Everything about your Pengurus"
   - name: Users
     description: "Everything about your Users"
+  - name: Wilayah
+    description: "Everything about your Wilayah"

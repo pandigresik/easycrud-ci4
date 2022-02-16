@@ -3,17 +3,18 @@
 namespace Config;
 
 use App\Filters\Admin;
-use Bonfire\Consent\Filters\ConsentFilter;
-use Bonfire\Filters\OnlineCheck;
-use CodeIgniter\Config\BaseConfig;
+use App\Filters\ApiAuth;
 use CodeIgniter\Filters\CSRF;
-use CodeIgniter\Filters\DebugToolbar;
+use Bonfire\Filters\OnlineCheck;
 use CodeIgniter\Filters\Honeypot;
+use CodeIgniter\Config\BaseConfig;
+use Sparks\Shield\Filters\ChainAuth;
+use Sparks\Shield\Filters\TokenAuth;
+use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
-use Sparks\Shield\Filters\ChainAuth;
 use Sparks\Shield\Filters\SessionAuth;
-use Sparks\Shield\Filters\TokenAuth;
+use Bonfire\Consent\Filters\ConsentFilter;
 
 class Filters extends BaseConfig
 {

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Entities\User;
+use App\Modules\Api\Entities\User;
 use Faker\Generator;
 use Sparks\Shield\Models\UserModel as ShieldUsers;
 
