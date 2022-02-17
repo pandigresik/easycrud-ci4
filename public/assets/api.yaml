@@ -643,21 +643,20 @@ paths:
           description: "Invalid input"
       security:
         - bearer_auth: []
-  "/wilayahs/{id}":
+  "/wilayahs/{kode}":
     get:
       tags:
         - Wilayah
-      summary: "Find Wilayah by ID"
+      summary: "Find Wilayah by Kode"
       description: "Returns a single Wilayah"
-      operationId: getWilayahById
+      operationId: getWilayahByKode
       parameters:
-        - name: id
+        - name: kode
           in: path
-          description: "ID of Wilayah to return"
+          description: "Kode of Wilayah to return"
           required: true
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         "200":
           description: "successful operation"
@@ -669,7 +668,7 @@ paths:
               schema:
                 $ref: "#/components/schemas/Wilayah"
         "400":
-          description: "Invalid ID supplier"
+          description: "Invalid Kode wilayah"
         "404":
           description: "Wilayah not found"
       security:
@@ -680,13 +679,12 @@ paths:
       summary: "Update an existing Wilayah"
       operationId: updateWilayah
       parameters:
-        - name: id
+        - name: kode
           in: path
-          description: "Wilayah id to update"
+          description: "Wilayah kode to update"
           required: true
           schema:
-            type: integer
-            format: int64
+            type: string
       requestBody:
         $ref: "#/components/requestBodies/Wilayah"
       responses:
@@ -704,18 +702,17 @@ paths:
       summary: "Deletes a Wilayah"
       operationId: deleteWilayah
       parameters:
-        - name: id
+        - name: kode
           in: path
-          description: "Wilayah id to delete"
+          description: "Wilayah kode to delete"
           required: true
           schema:
-            type: integer
-            format: int64
+            type: string
       responses:
         "400":
-          description: "Invalid ID supplied"
+          description: "Invalid Kode supplied"
         "404":
-          description: "Pet not found"
+          description: "Wilayah not found"
       security:
         - bearer_auth: []
 components:
