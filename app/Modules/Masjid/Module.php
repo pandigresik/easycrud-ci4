@@ -30,7 +30,11 @@ class Module extends BaseModule
             'url' => url_to('App\Modules\Masjid\Controllers\JabatanController::index'),
             'fontAwesomeIcon' => 'fas fa-users',
         ]);
-        $sidebar->menu('sidebar')->collection('masjid')->addItem($jabatanItem);
-        $sidebar->menu('sidebar')->collection('masjid')->addItem($pengurusItem);        
+        $memberItem = new MenuItem([
+            'title' => 'Member',
+            'url' => url_to('App\Modules\Masjid\Controllers\MemberController::index'),
+            'fontAwesomeIcon' => 'fas fa-users',
+        ]);
+        $sidebar->menu('sidebar')->collection('masjid')->addItem($jabatanItem)->addItem($pengurusItem)->addItem($memberItem);
     }
 }

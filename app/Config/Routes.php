@@ -48,6 +48,7 @@ $routes->group('api', ['namespace' => '\App\Modules\Api\Controllers', 'filter' =
     $routes->resource('jabatans');
     $routes->resource('pengurus');
     $routes->resource('wilayahs');
+    $routes->resource('members');
 });
 
 
