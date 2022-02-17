@@ -2,10 +2,10 @@
 
 namespace App\Controllers;
 
-use App\Controllers\AdminCrudController;
-use App\Models\JabatanFilter;
-use App\Models\JabatanModel;
+use App\Modules\Masjid\Models\JabatanFilter;
 use IlluminateAgnostic\Arr\Support\Arr;
+use App\Controllers\AdminCrudController;
+use App\Modules\Api\Models\JabatanModel;
 
 class JabatanController extends AdminCrudController
 {
@@ -13,7 +13,7 @@ class JabatanController extends AdminCrudController
     protected $viewPrefix = 'App\Modules\Masjid\Views\jabatan\\';
     protected $baseRoute = 'admin/masjid/jabatan';
     protected $langModel = 'jabatan';
-    protected $modelName = 'App\Models\JabatanModel';
+    protected $modelName = 'App\Modules\Api\Models\JabatanModel';
     public function index(){
         return parent::index();
     }

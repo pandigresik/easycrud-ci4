@@ -20,6 +20,45 @@ use Psr\Log\LoggerInterface;
  *
  * For security be sure to declare any new methods as protected or private.
  */
+
+/**
+ * @OA\OpenApi(
+ *     @OA\Info(
+ *         version="1.0.0",
+ *         title="swagger easycrud-ci4",
+ *         description="This is a sample server easycrud-ci4",
+ *         termsOfService="http://swagger.io/terms/",
+ *         @OA\Contact(
+ *             email="apiteam@swagger.io"
+ *         ),
+ *         @OA\License(
+ *             name="Apache 2.0",
+ *             url="http://www.apache.org/licenses/LICENSE-2.0.html"
+ *         )
+ *     ),
+ *     @OA\Server(
+ *         description="OpenApi host",
+ *         url="/api"
+ *     ),
+ *     @OA\ExternalDocumentation(
+ *         description="Find out more about Swagger",
+ *         url="http://swagger.io"
+ *     ), 
+ * )
+ */
+
+ /**
+ * @OA\SecurityScheme(
+ *     type="http",
+ *     description="Login with email and password to get the authentication token",
+ *     name="Token based Based",
+ *     in="header",
+ *     scheme="bearer",
+ *     bearerFormat="JWT",
+ *     securityScheme="bearer_auth",
+ * )
+ */
+ 
 class BaseController extends Controller
 {
     use Themeable;

@@ -14,15 +14,18 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = production
+CI_ENVIRONMENT = development
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-# app.baseURL = ''
-# app.forceGlobalSecureRequests = false
+app.siteName=Demasjid
+app.appTimezone=Asia/Jakarta
 
+# app.baseURL = 'http://demasjid.com'
+app.baseURL = 'http://localhost:8081'
+# app.forceGlobalSecureRequests = false
 # app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
 # app.sessionCookieName = 'ci_session'
 # app.sessionExpiration = 7200
@@ -37,11 +40,20 @@
 # DATABASE
 #--------------------------------------------------------------------
 
-# database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
-# database.default.DBDriver = MySQLi
+#database.default.hostname = localhost
+#database.default.database = bonfire
+#database.default.username = flectra
+#database.default.password = flectra
+#database.default.port = 5432
+#database.default.DBDriver = Postgre
+# database.default.DBPrefix =
+
+ database.default.hostname = localhost
+ database.default.database = bonfire
+ database.default.username = ahmad
+ database.default.password = 2hm2dafandi
+ database.default.port = 3306
+ database.default.DBDriver = MySQLi
 # database.default.DBPrefix =
 
 # database.tests.hostname = localhost
