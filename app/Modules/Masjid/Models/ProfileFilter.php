@@ -24,7 +24,7 @@ class ProfileFilter extends ProfileModel
      *
      * @return UserFilter
      */
-    public function filter(array $params = null)
+    public function filter(?array $params = null)
     {
         return [];
     }

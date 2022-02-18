@@ -11,16 +11,13 @@
 
 namespace App\Controllers;
 
-use App\Controllers\AdminController;
-
 /**
  * Class Dashboard
  *
  * The primary entry-point to the Bonfire admin area.
  */
 class Dashboard extends AdminController
-{    
-
+{
     /**
      * Displays the site's initial page.
      */

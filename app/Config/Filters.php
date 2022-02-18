@@ -4,17 +4,17 @@ namespace Config;
 
 use App\Filters\Admin;
 use App\Filters\ApiAuth;
-use CodeIgniter\Filters\CSRF;
+use Bonfire\Consent\Filters\ConsentFilter;
 use Bonfire\Filters\OnlineCheck;
-use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Config\BaseConfig;
-use Sparks\Shield\Filters\ChainAuth;
-use Sparks\Shield\Filters\TokenAuth;
+use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
+use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
 use CodeIgniter\Filters\SecureHeaders;
+use Sparks\Shield\Filters\ChainAuth;
 use Sparks\Shield\Filters\SessionAuth;
-use Bonfire\Consent\Filters\ConsentFilter;
+use Sparks\Shield\Filters\TokenAuth;
 
 class Filters extends BaseConfig
 {
@@ -36,7 +36,7 @@ class Filters extends BaseConfig
         'online'        => OnlineCheck::class,
         'consent'       => ConsentFilter::class,
         'admin'         => Admin::class,
-        'api'           => ApiAuth::class, 
+        'api'           => ApiAuth::class,
     ];
 
     /**
@@ -48,12 +48,12 @@ class Filters extends BaseConfig
     public $globals = [
         'before' => [
             'online' => ['except' => 'site-offline'],
-            'csrf' => ['except' => 'api/*'],
+            'csrf'   => ['except' => 'api/*'],
         ],
         'after' => [
             'alerts',
             'toolbar',
-            'consent' => ['except' => [ADMIN_AREA.'*','api/*']],
+            'consent' => ['except' => [ADMIN_AREA . '*', 'api/*']],
             // 'honeypot',
             // 'secureheaders',
         ],

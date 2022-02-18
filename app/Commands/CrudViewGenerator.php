@@ -56,7 +56,7 @@ class CrudViewGenerator extends BaseCommand
      *
      * @var array
      */
-    protected $arguments = [        
+    protected $arguments = [
         'name' => 'The view file name.',
     ];
 
@@ -73,15 +73,16 @@ class CrudViewGenerator extends BaseCommand
 
     private $db;
     private $columnItems;
+
     /**
      * Actually execute a command.
      */
     public function run(array $params)
-    {        
-        $this->db = db_connect();
+    {
+        $this->db        = db_connect();
         $this->component = 'View';
-        $this->directory = 'Views\\'.$params['directory'];
-        $this->template  = $params[0].'.tpl.php';
+        $this->directory = 'Views\\' . $params['directory'];
+        $this->template  = $params[0] . '.tpl.php';
 
         $this->classNameLang = 'CLI.generator.className.seeder';
         $this->execute($params);
@@ -100,16 +101,17 @@ class CrudViewGenerator extends BaseCommand
      * Performs pseudo-variables contained within view file.
      */
     protected function parseTemplate(string $class, array $search = [], array $replace = [], array $data = []): string
-    {                           
+    {
         $search[]  = '<@x-';
-        $search[]  = '{table}'; 
-        $search[]  =  '{form-content}';
+        $search[]  = '{table}';
+        $search[]  = '{form-content}';
         $search[]  = '{columnItems}';
         $replace[] = '<x-';
         $replace[] = $this->params['directory'];
         $replace[] = $this->getFieldData($this->params['directory']);
         $replace[] = $this->getColumnItems();
-        return $this->traitparseTemplate($class, $search, $replace,$data);        
+
+        return $this->traitparseTemplate($class, $search, $replace, $data);
     }
 
     /**
@@ -158,84 +160,99 @@ class CrudViewGenerator extends BaseCommand
         return $namespace . $this->directory . '\\' . str_replace('/', '\\', $class);
     }
 
-    private function mapForeignKey($tableName){
+    private function mapForeignKey($tableName)
+    {
         $result = [];
-        $fk = $this->db->getForeignKeyData($tableName);
-        if(!empty($fk)){
+        $fk     = $this->db->getForeignKeyData($tableName);
+        if (! empty($fk)) {
             foreach ($fk as $key => $field) {
                 $result[$field->column_name] = ['foreign_table_name' => $field->foreign_table_name, 'foreign_column_name' => $field->foreign_column_name];
             }
         }
+
         return $result;
     }
-    private function getFieldData($tableName){
-        $foreignKey = $this->mapForeignKey($tableName);
-        $fields = $this->db->getFieldData($tableName);        
-        $formContent = [];
-        $columnItem = [];        
-        $ignoredFields = ['id','created_at', 'updated_at'];        
+
+    private function getFieldData($tableName)
+    {
+        $foreignKey    = $this->mapForeignKey($tableName);
+        $fields        = $this->db->getFieldData($tableName);
+        $formContent   = [];
+        $columnItem    = [];
+        $ignoredFields = ['id', 'created_at', 'updated_at'];
+
         foreach ($fields as $field) {
-            $objForeignKey = $foreignKey[$field->name] ?? false; 
-            if(in_array($field->name, $ignoredFields)) continue;
-            $formContent[] = $this->generateFormInput($field, $objForeignKey);            
+            $objForeignKey = $foreignKey[$field->name] ?? false;
+            if (in_array($field->name, $ignoredFields, true)) {
+                continue;
+            }
+            $formContent[] = $this->generateFormInput($field, $objForeignKey);
 
             $columnItem[] = $this->generateColumnItem($field->name);
         }
-        $this->setColumnItems(implode(PHP_EOL,$columnItem));
-        $template = implode(PHP_EOL,$formContent);      
+        $this->setColumnItems(implode(PHP_EOL, $columnItem));
+        $template = implode(PHP_EOL, $formContent);
+
         return <<<HEAD
-        ${template}
-        HEAD;
+            {$template}
+            HEAD;
     }
-    private function generateColumnItem($name){
-        return "<td><?php echo esc(\$item->$name) ?></a></td>";
-        
-    } 
-    private function generateFormInput($field, $objForeignKey){
-        $name = $field->name;
-        $type = $objForeignKey ? 'select2' : $field->type;
-        $required = 'required';
-        $classInput = 'form-control '.$type;
-        if(property_exists($field, 'nullable')){
+
+    private function generateColumnItem($name)
+    {
+        return "<td><?php echo esc(\$item->{$name}) ?></a></td>";
+    }
+
+    private function generateFormInput($field, $objForeignKey)
+    {
+        $name       = $field->name;
+        $type       = $objForeignKey ? 'select2' : $field->type;
+        $required   = 'required';
+        $classInput = 'form-control ' . $type;
+        if (property_exists($field, 'nullable')) {
             if ($field->nullable) {
                 $required = '';
             }
         }
-        
+
         $formInput = '';
-        switch($type){
+
+        switch ($type) {
             case 'text':
-                $formInput =  <<<FIELD
-                <?= form_textarea('${name}', old('${name}', \$data->${name} ?? ''), "rows='4' class='$classInput' $required") ?>
-                FIELD;
+                $formInput = <<<FIELD
+                    <?= form_textarea('{$name}', old('{$name}', \$data->{$name} ?? ''), "rows='4' class='{$classInput}' {$required}") ?>
+                    FIELD;
             break;
+
             case 'select2':
-                $optionItems = $objForeignKey['foreign_table_name'].'Items';                
-                $formInput =  <<<FIELD
-                <?= form_dropdown('${name}',$${optionItems} ,old('${name}', \$data->${name} ?? ''), "class='$classInput' $required") ?>
-                FIELD;
+                $optionItems = $objForeignKey['foreign_table_name'] . 'Items';
+                $formInput   = <<<FIELD
+                    <?= form_dropdown('{$name}',\${$optionItems} ,old('{$name}', \$data->{$name} ?? ''), "class='{$classInput}' {$required}") ?>
+                    FIELD;
             break;
+
             default:
-                $formInput =  <<<FIELD
-                <?= form_input('${name}', old('${name}', \$data->${name} ?? ''), "class='$classInput' $required") ?>
-                FIELD;
+                $formInput = <<<FIELD
+                    <?= form_input('{$name}', old('{$name}', \$data->{$name} ?? ''), "class='{$classInput}' {$required}") ?>
+                    FIELD;
         }
+
         return <<<FIELD
-                        <div class="row mb-3">                            
-                            <?= form_label('${name}','',['for' => '${name}', 'class' => 'col-form-label col-sm-2']) ?>
-                            <div class="col-sm-10">
-                                ${formInput}
-                                <?php if (has_error('${name}')) { ?>
-                                <p class="text-danger"><?php echo error('${name}'); ?></p>
-                                <?php } ?>
+                            <div class="row mb-3">
+                                <?= form_label('{$name}','',['for' => '{$name}', 'class' => 'col-form-label col-sm-2']) ?>
+                                <div class="col-sm-10">
+                                    {$formInput}
+                                    <?php if (has_error('{$name}')) { ?>
+                                    <p class="text-danger"><?php echo error('{$name}'); ?></p>
+                                    <?php } ?>
+                                </div>
                             </div>
-                        </div>
-        FIELD;        
+            FIELD;
     }
 
     /**
      * Get the value of columnItems
-     */ 
+     */
     public function getColumnItems()
     {
         return $this->columnItems;
@@ -244,8 +261,10 @@ class CrudViewGenerator extends BaseCommand
     /**
      * Set the value of columnItems
      *
-     * @return  self
-     */ 
+     * @param mixed $columnItems
+     *
+     * @return self
+     */
     public function setColumnItems($columnItems)
     {
         $this->columnItems = $columnItems;

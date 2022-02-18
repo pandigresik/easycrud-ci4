@@ -250,7 +250,7 @@ class GuideCollection
 
             // Handle single page
             preg_match('|^[0-9]|', $file, $matches);
-            $prefix = count($matches) ? $matches[0] : null;
+            $prefix                   = count($matches) ? $matches[0] : null;
             $pages[$prefix ?? $count] = $file;
         }
 

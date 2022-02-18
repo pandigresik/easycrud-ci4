@@ -7,18 +7,18 @@
                 <h2>wilayah</h2>
             </div>
             <div class="col-auto">
-                <a href="<?php echo route_to($baseRoute.'/new'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>  wilayah</a>
+                <a href="<?= route_to($baseRoute . '/new'); ?>" class="btn btn-primary"><i class="fas fa-plus"></i>  wilayah</a>
             </div>
         </div>
     </x-page-head>
 
     <x-admin-box>
-        <div>            
+        <div>
             <div class="row">
                 <!-- List wilayahs -->
                 <div class="col" id="wilayah-list">
-                    <?php echo $this->include($viewPrefix.'\_table'); ?>
-                </div>                
+                    <?= $this->include($viewPrefix . '\_table'); ?>
+                </div>
             </div>
         </div>
 

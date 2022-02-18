@@ -9,7 +9,7 @@
             <li>
                 <button class="btn" hx-delete="<@php echo $deleteUrl ?>" hx-select="#htmx-alert" hx-swap="innerHTML" hx-indicator="#htmx-request-indicator">
                 <@php echo lang('Bonfire.delete') ?>
-                </button>                
+                </button>
             </li>
         </ul>
     </div>

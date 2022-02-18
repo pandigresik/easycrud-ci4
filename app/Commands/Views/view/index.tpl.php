@@ -13,12 +13,12 @@
     </x-page-head>
 
     <@x-admin-box>
-        <div>            
+        <div>
             <div class="row">
                 <!-- List {table}s -->
                 <div class="col" id="{table}-list">
                     <@php echo $this->include($viewPrefix.'\_table'); ?>
-                </div>                
+                </div>
             </div>
         </div>
 

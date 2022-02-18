@@ -167,18 +167,20 @@ class Bonfire
         }
     }
 
-    private function getAppModules(){
+    private function getAppModules()
+    {
         $modules = [];
-        $map = directory_map(APPPATH . 'Modules', 1);
+        $map     = directory_map(APPPATH . 'Modules', 1);
 
-            foreach ($map as $row) {
-                if (substr($row, -1) !== DIRECTORY_SEPARATOR) {
-                    continue;
-                }
-
-                $name                                 = trim($row, DIRECTORY_SEPARATOR);
-                $modules["App\\Modules\\{$name}"] = APPPATH . "Modules/{$name}";
+        foreach ($map as $row) {
+            if (substr($row, -1) !== DIRECTORY_SEPARATOR) {
+                continue;
             }
+
+            $name                             = trim($row, DIRECTORY_SEPARATOR);
+            $modules["App\\Modules\\{$name}"] = APPPATH . "Modules/{$name}";
+        }
+
         return $modules;
     }
 }

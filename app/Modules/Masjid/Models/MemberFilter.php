@@ -24,7 +24,7 @@ class MemberFilter extends MemberModel
      *
      * @return UserFilter
      */
-    public function filter(array $params = null)
+    public function filter(?array $params = null)
     {
         return [];
     }

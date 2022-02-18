@@ -7,18 +7,18 @@
                 <h2>profile</h2>
             </div>
             <div class="col-auto">
-                <a href="<?php echo route_to($baseRoute.'/new'); ?>" class="btn btn-primary">New profile</a>
+                <a href="<?= route_to($baseRoute . '/new'); ?>" class="btn btn-primary">New profile</a>
             </div>
         </div>
     </x-page-head>
 
     <x-admin-box>
-        <div>            
+        <div>
             <div class="row">
                 <!-- List profiles -->
                 <div class="col" id="profile-list">
-                    <?php echo $this->include($viewPrefix.'\_table'); ?>
-                </div>                
+                    <?= $this->include($viewPrefix . '\_table'); ?>
+                </div>
             </div>
         </div>
 

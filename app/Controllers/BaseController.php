@@ -43,11 +43,11 @@ use Psr\Log\LoggerInterface;
  *     @OA\ExternalDocumentation(
  *         description="Find out more about Swagger",
  *         url="http://swagger.io"
- *     ), 
+ *     ),
  * )
  */
 
- /**
+/**
  * @OA\SecurityScheme(
  *     type="http",
  *     description="Login with email and password to get the authentication token",
@@ -58,7 +58,6 @@ use Psr\Log\LoggerInterface;
  *     securityScheme="bearer_auth",
  * )
  */
- 
 class BaseController extends Controller
 {
     use Themeable;

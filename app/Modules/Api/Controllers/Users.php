@@ -1,52 +1,55 @@
-<?php namespace App\Modules\Api\Controllers;
- 
+<?php
+
+namespace App\Modules\Api\Controllers;
+
 use asligresik\easyapi\Controllers\BaseResourceController;
+
 class Users extends BaseResourceController
 {
-    protected $modelName = 'App\Modules\Api\Models\UsersModel';  
+    protected $modelName = 'App\Modules\Api\Models\UsersModel';
 
-     /**
+    /**
      * @OA\Get(
      *     path="/users",
      *     tags={"Users"},
      *     summary="Find list Users",
      *     description="Returns list of Users",
-     *     operationId="getUsers",  
+     *     operationId="getUsers",
      *     @OA\Parameter(
      *         name="search",
      *         in="query",
-     *         description="search by column defined",     
+     *         description="search by column defined",
      *         @OA\Schema(
-     *             type="object"              
+     *             type="object"
      *         )
      *     ),
      *     @OA\Parameter(
      *         name="order",
      *         in="query",
-     *         description="order by column defined",     
+     *         description="order by column defined",
      *         @OA\Schema(
-     *             type="object"              
+     *             type="object"
      *         )
-     *     ),    
+     *     ),
      *     @OA\Parameter(
      *         name="page",
      *         in="query",
-     *         description="page to show",     
+     *         description="page to show",
      *         @OA\Schema(
-     *             type="int32"     
+     *             type="int32"
      *         )
      *     ),
      *     @OA\Parameter(
      *         name="limit",
      *         in="query",
-     *         description="count data display per page",     
+     *         description="count data display per page",
      *         @OA\Schema(
-     *             type="int32"     
+     *             type="int32"
      *         )
-     *     ),   
+     *     ),
      *     @OA\Response(
      *         response=200,
-     *         description="successful operation",     
+     *         description="successful operation",
      *         @OA\JsonContent(type="object",
      *            @OA\Property(property="data",type="array",@OA\Items(ref="#/components/schemas/Users")),
      *            @OA\Property(property="pagination",type="object",@OA\Property(property="currentPage", type="integer"),@OA\Property(property="totalPage", type="integer")),
@@ -54,8 +57,8 @@ class Users extends BaseResourceController
      *         @OA\XmlContent(type="object",
      *            @OA\Property(property="data",type="array",@OA\Items(ref="#/components/schemas/Users")),
      *            @OA\Property(property="pagination",type="array",@OA\Items(ref="#/components/schemas/Users")),
-     *         ),           
-     *     ),     
+     *         ),
+     *     ),
      *     @OA\Response(
      *         response=404,
      *         description="Users not found"
@@ -64,7 +67,6 @@ class Users extends BaseResourceController
      *         {"bearer_auth": {}}
      *     }
      * )
-     *     
      */
 
     /**
@@ -102,7 +104,6 @@ class Users extends BaseResourceController
      *         {"bearer_auth": {}}
      *     }
      * )
-     *     
      */
 
     /**
@@ -123,7 +124,7 @@ class Users extends BaseResourceController
      *     ),
      *     security={
      *         {"bearer_auth": {}}
-     *     },     
+     *     },
      *     requestBody={"$ref": "#/components/requestBodies/Users"}
      * )
      */
@@ -158,7 +159,7 @@ class Users extends BaseResourceController
      *     ),
      *     security={
      *         {"bearer_auth": {}}
-     *     },     
+     *     },
      *     requestBody={"$ref": "#/components/requestBodies/Users"}
      * )
      */
@@ -168,7 +169,7 @@ class Users extends BaseResourceController
      *     path="/users/{id}",
      *     tags={"Users"},
      *     summary="Deletes a Users",
-     *     operationId="deleteUsers",     
+     *     operationId="deleteUsers",
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
@@ -192,4 +193,4 @@ class Users extends BaseResourceController
      *     },
      * )
      */
-} 
+}

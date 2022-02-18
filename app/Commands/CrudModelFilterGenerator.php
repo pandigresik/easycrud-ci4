@@ -2,16 +2,15 @@
 
 namespace App\Commands;
 
-use CodeIgniter\CLI\BaseCommand;
-use CodeIgniter\CLI\CLI;
-use CodeIgniter\Commands\Generators\ModelGenerator;
 use CodeIgniter\CLI\GeneratorTrait;
+use CodeIgniter\Commands\Generators\ModelGenerator;
 
 class CrudModelFilterGenerator extends ModelGenerator
 {
     use GeneratorTrait {
         parseTemplate as protected traitparseTemplate;
     }
+
     /**
      * The Command's Group
      *
@@ -56,11 +55,9 @@ class CrudModelFilterGenerator extends ModelGenerator
 
     /**
      * Actually execute a command.
-     *
-     * @param array $params
      */
     public function run(array $params)
-    {        
+    {
         $this->component = 'Model';
         $this->directory = 'Models';
         $this->template  = 'modelfilter.tpl.php';
@@ -73,12 +70,13 @@ class CrudModelFilterGenerator extends ModelGenerator
      * Performs pseudo-variables contained within view file.
      */
     protected function parseTemplate(string $class, array $search = [], array $replace = [], array $data = []): string
-    {           
-        $controllerName = explode('\\',$class);
-        $model = str_replace('Filter','', end($controllerName));        
-        $search[]  = '{model}';
-        $replace[] = $model;
-        return $this->traitparseTemplate($class, $search, $replace,$data);        
+    {
+        $controllerName = explode('\\', $class);
+        $model          = str_replace('Filter', '', end($controllerName));
+        $search[]       = '{model}';
+        $replace[]      = $model;
+
+        return $this->traitparseTemplate($class, $search, $replace, $data);
     }
 
     protected function renderTemplate(array $data = []): string

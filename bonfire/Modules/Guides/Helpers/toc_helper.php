@@ -17,20 +17,19 @@ if (! function_exists('load_recursive_guide')) {
      * @param mixed $alias
      * @param mixed $page
      * @param mixed $folder
-     * @param bool  $inSubFolder
      *
      * @return mixed
      */
-    function load_recursive_guide($alias, $page, $folder, bool $inSubFolder=false)
+    function load_recursive_guide($alias, $page, $folder, bool $inSubFolder = false)
     {
         asort($page);
 
         // Name of folder
         $string = esc(ucwords(trim(GuideCollection::formatPage($folder), ' /')));
         $string = $inSubFolder
-            ? '<h5>'. $string .'</h5>'
-            : '<h3>'. $string .'</h3>';
-        $string .=	'<ul class="list-unstyled px-4">';
+            ? '<h5>' . $string . '</h5>'
+            : '<h3>' . $string . '</h3>';
+        $string .= '<ul class="list-unstyled px-4">';
 
         foreach ($page as $sub_folder => $row) {
             if (is_numeric($sub_folder)) {

@@ -24,7 +24,7 @@ class WilayahFilter extends WilayahModel
      *
      * @return UserFilter
      */
-    public function filter(array $params = null)
+    public function filter(?array $params = null)
     {
         return [];
     }

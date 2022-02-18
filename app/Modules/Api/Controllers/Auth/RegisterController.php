@@ -12,7 +12,7 @@ class RegisterController extends ResourceController
 
     /**
      * @OA\Post(
-     *     path="/auth/register",	 
+     *     path="/auth/register",
      *     tags={"Authentication"},
      *     summary="register page to new user",
      *     operationId="userRegister",
@@ -24,34 +24,34 @@ class RegisterController extends ResourceController
      *           @OA\Schema(
      * 				type="object",
      * 				@OA\Property(property="email",type="string"),
-     * 				@OA\Property(property="username",type="string"),	 
+     * 				@OA\Property(property="username",type="string"),
      * 				@OA\Property(property="password",type="string"),
      * 				@OA\Property(property="pass_confirm",type="string"),
      * 			)
      *       ),
-     * 	   ),	 
+     * 	   ),
      *     @OA\Response(
      *         response=200,
      *         description="Login successed",
      *         @OA\JsonContent(
      * 			@OA\Schema(
      * 				type="object",
-     * 				@OA\Property(property="token",type="string")	 
+     * 				@OA\Property(property="token",type="string")
      * 			)
      * 		),
      *         @OA\XmlContent(
      * 			@OA\Schema(
      * 				type="object",
-     * 				@OA\Property(property="token",type="string")	 
+     * 				@OA\Property(property="token",type="string")
      * 			)
      * 		),
      *     ),
      *     @OA\Response(
      *         response=400,
      *         description="Invalid username/password supplied"
-     *     ),	 	 
+     *     ),
      * )
-     */ 
+     */
 
     /**
      * Attempts to register the user.
@@ -59,9 +59,8 @@ class RegisterController extends ResourceController
     public function action()
     {
         // Check if registration is allowed
-        if (!setting('Auth.allowRegistration')) {
-
-            return $this->failForbidden('Forbidden', null, lang('Auth.registerDisabled'));            
+        if (! setting('Auth.allowRegistration')) {
+            return $this->failForbidden('Forbidden', null, lang('Auth.registerDisabled'));
         }
 
         $users = $this->getUserProvider();
@@ -70,20 +69,19 @@ class RegisterController extends ResourceController
         // like the password, can only be validated properly here.
         $rules = $this->getValidationRules();
 
-        if (!$this->validate($rules)) {
-            return $this->failValidationErrors(service('validation')->getErrors());            
+        if (! $this->validate($rules)) {
+            return $this->failValidationErrors(service('validation')->getErrors());
         }
 
         // Save the user
         $allowedPostFields = array_merge(setting('Auth.validFields'), setting('Auth.personalFields'));
-        $user = $this->getUserEntity();
+        $user              = $this->getUserEntity();
 
         $user->fill($this->request->getPost($allowedPostFields));
 
-        if (!$users->save($user)) {
-
-            return $this->failResourceExists('Conflict', null, $users->errors());            
-        }        
+        if (! $users->save($user)) {
+            return $this->failResourceExists('Conflict', null, $users->errors());
+        }
 
         // Get the updated user so we have the ID...
         $user = $users->find($users->getInsertID());
@@ -93,11 +91,10 @@ class RegisterController extends ResourceController
 
         // Add to default group
         $users->addToDefaultGroup($user);
-        
+
         return $this->respondUpdated([
-            'token' => $this->getTokenSecret($user)
+            'token' => $this->getTokenSecret($user),
         ], lang('Auth.registerSuccess'));
-        
     }
 
     /**
@@ -128,9 +125,9 @@ class RegisterController extends ResourceController
     protected function getValidationRules()
     {
         return [
-            'username' => 'required|alpha_numeric_space|min_length[3]|is_unique[users.username]',
-            'email' => 'required|valid_email|is_unique[auth_identities.secret]',
-            'password' => 'required|strong_password',
+            'username'     => 'required|alpha_numeric_space|min_length[3]|is_unique[users.username]',
+            'email'        => 'required|valid_email|is_unique[auth_identities.secret]',
+            'password'     => 'required|strong_password',
             'pass_confirm' => 'required|matches[password]',
         ];
     }

@@ -11,10 +11,8 @@
 
 namespace App\Modules\Api\Traits;
 
-use CodeIgniter\Format\FormatterInterface;
+use App\Modules\Api\Entities\User;
 use CodeIgniter\HTTP\IncomingRequest;
-use CodeIgniter\HTTP\Response;
-use Config\Services;
 
 /**
  * Provides common, more readable, methods to provide
@@ -24,7 +22,7 @@ use Config\Services;
  * @property IncomingRequest $request
  * @property Response        $response
  */
-use App\Modules\Api\Entities\User;
+use CodeIgniter\HTTP\Response;
 use Sparks\Shield\Entities\AccessToken;
 
 trait HasTokenTrait
@@ -39,8 +37,8 @@ trait HasTokenTrait
             // ->where('secret', hash('sha256', $credentials['token']))
             ->asObject(AccessToken::class)
             ->first();
-        
-        if($token){
+
+        if ($token) {
             return $token->secret2;
         }
         $tokenStr = random_string('sha1');
@@ -49,7 +47,7 @@ trait HasTokenTrait
             'user_id' => $user->id,
             'type'    => 'access_token',
             'secret'  => $newToken,
-            'secret2' => $tokenStr
+            'secret2' => $tokenStr,
         ]);
 
         return $tokenStr;

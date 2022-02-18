@@ -12,13 +12,13 @@
             <a href="#">Restore {table}?</a>
         </div>
     <@php } ?>
-    
+
 
     <@x-admin-box>
 
-    
+
         <form action="<@php echo $actionUrl; ?>" method="post" enctype="multipart/form-data">
-    
+
             <@php echo csrf_field(); ?>
 
             <@php if (isset($data) && null !== $data) { ?>
@@ -26,12 +26,12 @@
                 <input type="hidden" name="id" value="<@php echo $data->id; ?>">
             <@php } ?>
 
-            <fieldset>                                             
-                {form-content}                
-            </fieldset>        
+            <fieldset>
+                {form-content}
+            </fieldset>
 
             <div class="text-end py-3">
-                <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save"></i> {table}</button>                
+                <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-save"></i> {table}</button>
             </div>
 
         </form>

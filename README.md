@@ -28,6 +28,10 @@ Aplikasi untuk manajemen masjid
 - dalam folder contoh telah ada folder almuhajirin, copy file env menjadi .env dan sesuaikan dengan settingan aplikasi anda
 - setting virtual host yang mengarah ke folder almuhajirin, didalam juga sudah ada contoh sederhana konfigurasi vhost untuk nginx
 
+## Postman link
+
+- [Postman Collection](https://www.getpostman.com/collections/3b1f23682fbf40fd101f)
+
 ## Server Requirements
 
 This currently has the same requirements as CodeIgniter 4.

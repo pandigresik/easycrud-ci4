@@ -40,7 +40,7 @@ class {class} extends AdminCrudController
         return [
             'headers' => [
                 {header}
-            ],            
+            ],
             'controller' => $this->getBaseController(),
             'viewPrefix' => $this->getViewPrefix(),
 			'baseRoute' => $this->getBaseRoute(),
@@ -48,20 +48,20 @@ class {class} extends AdminCrudController
             'data' => $model->paginate(setting('App.perPage')),
         ];
     }
-    
+
     protected function getDataEdit($id = null)
     {
-        $dataEdit = parent::getDataEdit($id);        
+        $dataEdit = parent::getDataEdit($id);
         $model = new {model}Model();
-        
+
         if(!empty($id)){
             $data = $model->find($id);
             if (null === $data) {
                 return redirect()->back()->with('error', lang('Bonfire.resourceNotFound', [$this->langModel]));
             }
             $dataEdit['data'] = $data;
-        }                
-        {optionItemDropdown}        
+        }
+        {optionItemDropdown}
         return $dataEdit;
     }
 }

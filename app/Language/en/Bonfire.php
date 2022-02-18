@@ -29,6 +29,6 @@ return [
     'lastModified' => 'Last Modified',
     'fileSize'     => 'File Size',
 
-    'save'          => 'Simpan',
-    'new'           => 'Baru'
+    'save' => 'Simpan',
+    'new'  => 'Baru',
 ];

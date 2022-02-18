@@ -1,10 +1,11 @@
-<?php namespace App\Controllers;
+<?php
 
-use App\Controllers\BaseController;
+namespace App\Controllers;
 
 class Swagger extends BaseController
 {
-    public function index(){        
+    public function index()
+    {
         return view('swagger/index');
-    }    
+    }
 }

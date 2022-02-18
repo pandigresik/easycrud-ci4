@@ -2,8 +2,6 @@
 
 namespace App\Commands;
 
-use CodeIgniter\CLI\BaseCommand;
-use CodeIgniter\CLI\CLI;
 use CodeIgniter\Commands\Generators\ControllerGenerator;
 
 class CrudControllerGenerator extends ControllerGenerator
@@ -53,15 +51,14 @@ class CrudControllerGenerator extends ControllerGenerator
     private $db;
     private $headers;
     private $itemDropdowns;
+
     /**
      * Actually execute a command.
-     *
-     * @param array $params
      */
     public function run(array $params)
     {
         $this->db = db_connect();
-        parent::run($params);        
+        parent::run($params);
     }
 
     protected function renderTemplate(array $data = []): string
@@ -73,70 +70,76 @@ class CrudControllerGenerator extends ControllerGenerator
      * Performs pseudo-variables contained within view file.
      */
     protected function parseTemplate(string $class, array $search = [], array $replace = [], array $data = []): string
-    {           
-        $controllerName = explode('\\',$class);
-        $model = str_replace('Controller','', end($controllerName));
-        $table = strtolower($model);
+    {
+        $controllerName = explode('\\', $class);
+        $model          = str_replace('Controller', '', end($controllerName));
+        $table          = strtolower($model);
         $this->prepareDataRelation($table);
         $search[]  = '{table}';
         $search[]  = '{model}';
         $search[]  = '{filterNamespace}';
         $search[]  = '{header}';
-        $search[]  = '{optionItemDropdown}';       
+        $search[]  = '{optionItemDropdown}';
         $replace[] = $table;
         $replace[] = $model;
-        $replace[] = implode('\\',array_slice($controllerName, 0 , count($controllerName) - 2));
+        $replace[] = implode('\\', array_slice($controllerName, 0, count($controllerName) - 2));
         $replace[] = $this->getHeaders();
         $replace[] = $this->getItemDropdowns();
-        return parent::parseTemplate($class, $search, $replace,$data);        
+
+        return parent::parseTemplate($class, $search, $replace, $data);
     }
 
-    private function mapForeignKey($tableName){
+    private function mapForeignKey($tableName)
+    {
         $result = [];
-        $fk = $this->db->getForeignKeyData($tableName);
-        if(!empty($fk)){
+        $fk     = $this->db->getForeignKeyData($tableName);
+        if (! empty($fk)) {
             foreach ($fk as $key => $field) {
                 $result[$field->column_name] = ['foreign_table_name' => $field->foreign_table_name, 'foreign_column_name' => $field->foreign_column_name];
             }
         }
+
         return $result;
     }
 
-    
-    private function prepareDataRelation($tableName){
-        $foreignKey = $this->mapForeignKey($tableName);
-        $fields = $this->db->getFieldData($tableName);
-        $ignoredFields = ['id','created_at','updated_at','deleted_at'];
-        $headers = [];
-        $itemDropdowns = [];        
+    private function prepareDataRelation($tableName)
+    {
+        $foreignKey    = $this->mapForeignKey($tableName);
+        $fields        = $this->db->getFieldData($tableName);
+        $ignoredFields = ['id', 'created_at', 'updated_at', 'deleted_at'];
+        $headers       = [];
+        $itemDropdowns = [];
+
         foreach ($fields as $field) {
-            if(in_array($field->name, $ignoredFields)) continue;
+            if (in_array($field->name, $ignoredFields, true)) {
+                continue;
+            }
             $fieldStr = <<<FIELD
-                            '$field->name' => '$field->name'
-            FIELD;
-            array_push($headers,$fieldStr);
-            $fk = $foreignKey[$field->name] ?? false;
-            if($fk){
+                                '{$field->name}' => '{$field->name}'
+                FIELD;
+            $headers[] = $fieldStr;
+            $fk        = $foreignKey[$field->name] ?? false;
+            if ($fk) {
                 $tableForeign = $fk['foreign_table_name'];
                 $modelForeign = pascalize($fk['foreign_table_name']);
-                $dropdownStr = <<<FIELD
-                    \$dataEdit['${tableForeign}Items'] = Arr::pluck(model('App\Models\\${modelForeign}Model')->select(['id as key','name as text'])->asArray()->findAll(), 'text', 'key');
-                FIELD;
-                array_push($itemDropdowns, $dropdownStr);
-            }                        
+                $dropdownStr  = <<<FIELD
+                        \$dataEdit['{$tableForeign}Items'] = Arr::pluck(model('App\\Models\\{$modelForeign}Model')->select(['id as key','name as text'])->asArray()->findAll(), 'text', 'key');
+                    FIELD;
+                $itemDropdowns[] = $dropdownStr;
+            }
         }
         $this->setItemDropdowns(implode(PHP_EOL, $itemDropdowns));
-        $template = implode(','.PHP_EOL,$headers);      
+        $template = implode(',' . PHP_EOL, $headers);
         $this->setHeaders(
             <<<HEAD
-                ${template}
-            HEAD
+                    {$template}
+                HEAD
         );
     }
 
     /**
      * Get the value of headers
-     */ 
+     */
     public function getHeaders()
     {
         return $this->headers;
@@ -145,8 +148,10 @@ class CrudControllerGenerator extends ControllerGenerator
     /**
      * Set the value of headers
      *
-     * @return  self
-     */ 
+     * @param mixed $headers
+     *
+     * @return self
+     */
     public function setHeaders($headers)
     {
         $this->headers = $headers;
@@ -156,7 +161,7 @@ class CrudControllerGenerator extends ControllerGenerator
 
     /**
      * Get the value of itemDropdowns
-     */ 
+     */
     public function getItemDropdowns()
     {
         return $this->itemDropdowns;
@@ -165,8 +170,10 @@ class CrudControllerGenerator extends ControllerGenerator
     /**
      * Set the value of itemDropdowns
      *
-     * @return  self
-     */ 
+     * @param mixed $itemDropdowns
+     *
+     * @return self
+     */
     public function setItemDropdowns($itemDropdowns)
     {
         $this->itemDropdowns = $itemDropdowns;
