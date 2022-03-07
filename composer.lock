@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a29239c33494f0c93671942bebc904a3",
+    "content-hash": "abe69c246cbd32206dfc146660ede976",
     "packages": [
         {
             "name": "asligresik/easyapi",
-            "version": "v0.0.6",
+            "version": "v0.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pandigresik/packagist-easyapi.git",
-                "reference": "595bf0c0a738ee6c1bcb75f96aaf36681818efc1"
+                "reference": "56f3428e1746e74b9e7b1cb0afc8c9941a9a56eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pandigresik/packagist-easyapi/zipball/595bf0c0a738ee6c1bcb75f96aaf36681818efc1",
-                "reference": "595bf0c0a738ee6c1bcb75f96aaf36681818efc1",
+                "url": "https://api.github.com/repos/pandigresik/packagist-easyapi/zipball/56f3428e1746e74b9e7b1cb0afc8c9941a9a56eb",
+                "reference": "56f3428e1746e74b9e7b1cb0afc8c9941a9a56eb",
                 "shasum": ""
             },
             "require": {
@@ -44,9 +44,9 @@
             "description": "REST API generator for Codeigniter 4",
             "support": {
                 "issues": "https://github.com/pandigresik/packagist-easyapi/issues",
-                "source": "https://github.com/pandigresik/packagist-easyapi/tree/v0.0.6"
+                "source": "https://github.com/pandigresik/packagist-easyapi/tree/v0.0.8"
             },
-            "time": "2021-12-16T08:57:03+00:00"
+            "time": "2022-02-19T04:27:51+00:00"
         },
         {
             "name": "codeigniter4/framework",
