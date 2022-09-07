@@ -998,21 +998,21 @@
         },
         {
             "name": "pragmarx/ia-arr",
-            "version": "v7.3.1",
+            "version": "v7.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/antonioribeiro/ia-arr.git",
-                "reference": "e0107e68bbce8736f6e19c796a5511b741ced227"
+                "reference": "b526eb701791faaa548bcfa7b7bcd12748739839"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/antonioribeiro/ia-arr/zipball/e0107e68bbce8736f6e19c796a5511b741ced227",
-                "reference": "e0107e68bbce8736f6e19c796a5511b741ced227",
+                "url": "https://api.github.com/repos/antonioribeiro/ia-arr/zipball/b526eb701791faaa548bcfa7b7bcd12748739839",
+                "reference": "b526eb701791faaa548bcfa7b7bcd12748739839",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0",
-                "symfony/var-dumper": "~3.3|~4.0|~5.0"
+                "symfony/var-dumper": "~3.3|~4.0|~5.0|~6.0"
             },
             "require-dev": {
                 "mockery/mockery": "~1.0",
@@ -1030,14 +1030,14 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "IlluminateAgnostic\\Arr\\": "src/",
-                    "IlluminateAgnostic\\Arr\\Tests\\": "tests/"
-                },
                 "files": [
                     "src/Support/helpers.php",
                     "src/Support/alias.php"
-                ]
+                ],
+                "psr-4": {
+                    "IlluminateAgnostic\\Arr\\": "src/",
+                    "IlluminateAgnostic\\Arr\\Tests\\": "tests/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1062,9 +1062,9 @@
             ],
             "support": {
                 "issues": "https://github.com/antonioribeiro/ia-arr/issues",
-                "source": "https://github.com/antonioribeiro/ia-arr/tree/master"
+                "source": "https://github.com/antonioribeiro/ia-arr/tree/v7.3.2"
             },
-            "time": "2020-03-26T08:59:52+00:00"
+            "time": "2022-09-07T10:25:34+00:00"
         },
         {
             "name": "psr/cache",
@@ -2174,16 +2174,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.4.3",
+            "version": "v5.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "970a01f208bf895c5f327ba40b72288da43adec4"
+                "reference": "b8f306d7b8ef34fb3db3305be97ba8e088fb4861"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/970a01f208bf895c5f327ba40b72288da43adec4",
-                "reference": "970a01f208bf895c5f327ba40b72288da43adec4",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/b8f306d7b8ef34fb3db3305be97ba8e088fb4861",
+                "reference": "b8f306d7b8ef34fb3db3305be97ba8e088fb4861",
                 "shasum": ""
             },
             "require": {
@@ -2243,7 +2243,7 @@
                 "dump"
             ],
             "support": {
-                "source": "https://github.com/symfony/var-dumper/tree/v5.4.3"
+                "source": "https://github.com/symfony/var-dumper/tree/v5.4.11"
             },
             "funding": [
                 {
@@ -2259,7 +2259,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-01-17T16:30:37+00:00"
+            "time": "2022-07-20T13:00:38+00:00"
         },
         {
             "name": "symfony/yaml",
