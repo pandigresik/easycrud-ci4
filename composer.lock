@@ -170,16 +170,16 @@
         },
         {
             "name": "components/font-awesome",
-            "version": "6.1.1",
+            "version": "6.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/components/font-awesome.git",
-                "reference": "9c95a6a9572933bc964f05b810f0808a5de00ee1"
+                "reference": "75823cacdc5a2b34befa423b390432f5bef373b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/font-awesome/zipball/9c95a6a9572933bc964f05b810f0808a5de00ee1",
-                "reference": "9c95a6a9572933bc964f05b810f0808a5de00ee1",
+                "url": "https://api.github.com/repos/components/font-awesome/zipball/75823cacdc5a2b34befa423b390432f5bef373b5",
+                "reference": "75823cacdc5a2b34befa423b390432f5bef373b5",
                 "shasum": ""
             },
             "type": "component",
@@ -203,9 +203,9 @@
             "description": "Font Awesome, the iconic SVG, font, and CSS framework.",
             "support": {
                 "issues": "https://github.com/components/font-awesome/issues",
-                "source": "https://github.com/components/font-awesome/tree/6.1.1"
+                "source": "https://github.com/components/font-awesome/tree/6.2.0"
             },
-            "time": "2022-04-18T13:15:48+00:00"
+            "time": "2022-09-08T05:14:26+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
