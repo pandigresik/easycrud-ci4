@@ -2338,24 +2338,24 @@
         },
         {
             "name": "tatter/alerts",
-            "version": "v3.0.0-rc.1",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tattersoftware/codeigniter4-alerts.git",
-                "reference": "f84415eb539532abefbebd2b10db8d6a91b211c1"
+                "reference": "aa7a57d5aaef3b9d0103f6fe17eca86c147fcf04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tattersoftware/codeigniter4-alerts/zipball/f84415eb539532abefbebd2b10db8d6a91b211c1",
-                "reference": "f84415eb539532abefbebd2b10db8d6a91b211c1",
+                "url": "https://api.github.com/repos/tattersoftware/codeigniter4-alerts/zipball/aa7a57d5aaef3b9d0103f6fe17eca86c147fcf04",
+                "reference": "aa7a57d5aaef3b9d0103f6fe17eca86c147fcf04",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.3 || ^8.0"
+                "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "codeigniter4/codeigniter4": "dev-develop",
-                "tatter/tools": "^1.15"
+                "codeigniter4/framework": "^4.1",
+                "tatter/tools": "^2.0"
             },
             "type": "library",
             "autoload": {
@@ -2389,7 +2389,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tattersoftware/codeigniter4-alerts/issues",
-                "source": "https://github.com/tattersoftware/codeigniter4-alerts/tree/v3.0.0-rc.1"
+                "source": "https://github.com/tattersoftware/codeigniter4-alerts/tree/v3.1.0"
             },
             "funding": [
                 {
@@ -2401,7 +2401,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-01-02T23:14:09+00:00"
+            "time": "2022-11-10T19:00:28+00:00"
         },
         {
             "name": "zircote/swagger-php",
