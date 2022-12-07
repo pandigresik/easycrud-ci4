@@ -14,7 +14,7 @@
 		"roave/security-advisories": "dev-latest",
 		"spatie/commonmark-highlighter": "^3.0",
 		"tatter/alerts": "^3.0",
-		"asligresik/easyapi": "^0.0.8",
+		"asligresik/easyapi": "^0.1.0",
 		"pragmarx/ia-arr": "^7.3"				
 	},
 	"require-dev": {
