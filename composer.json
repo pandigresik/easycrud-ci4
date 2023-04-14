@@ -1,0 +1,55 @@
+{
+    "name": "codeigniter4/appstarter",
+    "type": "project",
+    "description": "CodeIgniter4 starter app",
+    "homepage": "https://codeigniter.com",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "codeigniter4/framework": "^4.0",
+        "tatter/alerts": "^3.0",
+        "codeigniter4/shield": "dev-develop",
+        "asligresik/easyapi": "dev-master",
+        "pragmarx/ia-arr": "^7.3",
+        "tatter/menus": "dev-develop",
+        "lonnieezell/bonfire": "dev-develop"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9",
+        "mikey179/vfsstream": "^1.6",
+        "phpunit/phpunit": "^9.1",
+        "phpstan/phpstan": "1.8.x-dev",
+        "friendsofphp/php-cs-fixer": "^3.1"
+    },
+    "suggest": {
+        "ext-fileinfo": "Improves mime type detection for files"
+    },
+    "autoload": {
+        "exclude-from-classmap": [
+            "**/Database/Migrations/**"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Support\\": "tests/_support"
+        }
+    },
+    "scripts": {        
+        "analyze": "phpstan analyze",
+		"ci": [
+			"Composer\\Config::disableProcessTimeout",		
+			"@analyze",
+			"@test",			
+			"@style"
+		],				
+		"style": "php-cs-fixer fix --verbose --ansi --using-cache=no",
+		"swagger-doc":"openapi -o public/assets/api.yaml app",
+		"test": "phpunit"	
+    },
+    "support": {
+        "forum": "http://forum.codeigniter.com/",
+        "source": "https://github.com/codeigniter4/CodeIgniter4",
+        "slack": "https://codeigniterchat.slack.com"
+    },
+    "minimum-stability": "dev"
+}

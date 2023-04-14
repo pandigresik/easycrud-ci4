@@ -1,0 +1,91 @@
+
+CodeIgniter v4.3.3 Command Line Tool - Server Time: 2023-04-12 15:08:42 UTC+07:00
+
++--------+-------------------------------------------+---------------------+-------------------------------------------------------------------------------+----------------------+------------------------+
+| Method | Route                                     | Name                | Handler                                                                       | Before Filters       | After Filters          |
++--------+-------------------------------------------+---------------------+-------------------------------------------------------------------------------+----------------------+------------------------+
+| GET    | /                                         | »                   | \App\Controllers\Home::index                                                  | online               | alerts consent toolbar |
+| GET    | admin                                     | »                   | \App\Modules\Admin\Controllers\Home::index                                    | online session admin | alerts toolbar         |
+| GET    | admin/autoResponses                       | »                   | \App\Modules\Admin\Controllers\AutoResponses::index                           | online session admin | alerts toolbar         |
+| GET    | admin/autoResponses/new                   | »                   | \App\Modules\Admin\Controllers\AutoResponses::new                             | online session admin | alerts toolbar         |
+| GET    | admin/autoResponses/(.*)/edit             | »                   | \App\Modules\Admin\Controllers\AutoResponses::edit/$1                         | online session admin | alerts toolbar         |
+| GET    | admin/autoResponses/(.*)                  | »                   | \App\Modules\Admin\Controllers\AutoResponses::show/$1                         | online session admin | alerts toolbar         |
+| GET    | admin/contacts                            | »                   | \App\Modules\Admin\Controllers\Contacts::index                                | online session admin | alerts toolbar         |
+| GET    | admin/contacts/new                        | »                   | \App\Modules\Admin\Controllers\Contacts::new                                  | online session admin | alerts toolbar         |
+| GET    | admin/contacts/(.*)/edit                  | »                   | \App\Modules\Admin\Controllers\Contacts::edit/$1                              | online session admin | alerts toolbar         |
+| GET    | admin/contacts/(.*)                       | »                   | \App\Modules\Admin\Controllers\Contacts::show/$1                              | online session admin | alerts toolbar         |
+| GET    | admin/projects                            | »                   | \App\Modules\Admin\Controllers\Projects::index                                | online session admin | alerts toolbar         |
+| GET    | admin/projects/new                        | »                   | \App\Modules\Admin\Controllers\Projects::new                                  | online session admin | alerts toolbar         |
+| GET    | admin/projects/(.*)/edit                  | »                   | \App\Modules\Admin\Controllers\Projects::edit/$1                              | online session admin | alerts toolbar         |
+| GET    | admin/projects/(.*)                       | »                   | \App\Modules\Admin\Controllers\Projects::show/$1                              | online session admin | alerts toolbar         |
+| GET    | assets/(.*)                               | »                   | \Bonfire\Assets\Controllers\AssetController::serve/$1                         | online               | alerts consent toolbar |
+| GET    | admin/settings/widgets                    | widgets-settings    | \Bonfire\Widgets\Controllers\WidgetsSettingsController::index                 | online session admin | alerts toolbar         |
+| GET    | admin/settings/widgets/([^/]+)            | »                   | \Bonfire\Widgets\Controllers\WidgetsSettingsController::show/$1               | online session admin | alerts toolbar         |
+| GET    | admin/settings/general                    | general-settings    | \Bonfire\Settings\Controllers\GeneralSettingsController::general              | online session admin | alerts toolbar         |
+| GET    | admin/settings/timezones                  | »                   | \Bonfire\Settings\Controllers\GeneralSettingsController::getTimezones         | online session admin | alerts toolbar         |
+| GET    | admin/settings/users                      | user-settings       | \Bonfire\Users\Controllers\UserSettingsController::index                      | online session admin | alerts toolbar         |
+| GET    | admin/users                               | user-list           | \Bonfire\Users\Controllers\UserController::list                               | online session admin | alerts toolbar         |
+| GET    | admin/users/new                           | user-new            | \Bonfire\Users\Controllers\UserController::create                             | online session admin | alerts toolbar         |
+| GET    | admin/users/([0-9]+)                      | user-edit           | \Bonfire\Users\Controllers\UserController::edit/$1                            | online session admin | alerts toolbar         |
+| GET    | admin/users/([0-9]+)/delete               | user-delete         | \Bonfire\Users\Controllers\UserController::delete/$1                          | online session admin | alerts toolbar         |
+| GET    | admin/users/([0-9]+)/security             | »                   | \Bonfire\Users\Controllers\UserController::security/$1                        | online session admin | alerts toolbar         |
+| GET    | admin/users/([0-9]+)/permissions          | »                   | \Bonfire\Users\Controllers\UserController::permissions/$1                     | online session admin | alerts toolbar         |
+| GET    | admin/settings/consent                    | consent-settings    | \Bonfire\Consent\Controllers\ConsentSettingsController::index                 | online session admin | alerts toolbar         |
+| GET    | admin/settings/groups                     | user-group-settings | \Bonfire\Groups\Controllers\GroupSettingsController::list                     | online session admin | alerts toolbar         |
+| GET    | admin/settings/groups/([^/]+)             | »                   | \Bonfire\Groups\Controllers\GroupSettingsController::show/$1                  | online session admin | alerts toolbar         |
+| GET    | admin/settings/groups/([^/]+)/permissions | »                   | \Bonfire\Groups\Controllers\GroupSettingsController::permissions/$1           | online session admin | alerts toolbar         |
+| GET    | admin/recycler                            | recycler            | \Bonfire\Recycler\Controllers\RecycleController::viewResource                 | online session admin | alerts toolbar         |
+| GET    | admin/recycler/restore/([^/]+)/([0-9]+)   | »                   | \Bonfire\Recycler\Controllers\RecycleController::restore/$1/$2                | online session admin | alerts toolbar         |
+| GET    | admin/recycler/purge/([^/]+)/([0-9]+)     | »                   | \Bonfire\Recycler\Controllers\RecycleController::purge/$1/$2                  | online session admin | alerts toolbar         |
+| GET    | register                                  | »                   | \Bonfire\Auth\Controllers\RegisterController::registerView                    | online               | alerts consent toolbar |
+| GET    | login                                     | »                   | \Bonfire\Auth\Controllers\LoginController::loginView                          | online               | alerts consent toolbar |
+| GET    | login/magic-link                          | magic-link          | \Bonfire\Auth\Controllers\MagicLinkController::loginView                      | online               | alerts consent toolbar |
+| GET    | login/verify-magic-link                   | verify-magic-link   | \Bonfire\Auth\Controllers\MagicLinkController::verify                         | online               | alerts consent toolbar |
+| GET    | logout                                    | logout              | \CodeIgniter\Shield\Controllers\LoginController::logoutAction                 | online               | alerts consent toolbar |
+| GET    | auth/a/show                               | auth-action-show    | \CodeIgniter\Shield\Controllers\ActionController::show                        | online               | alerts consent toolbar |
+| GET    | admin/settings/email                      | email-settings      | \Bonfire\Email\Controllers\EmailSettingsController::index                     | online session admin | alerts toolbar         |
+| GET    | admin/tools/system-info                   | sys-info            | \Bonfire\Tools\Controllers\SystemInfoController::index                        | online session admin | alerts toolbar         |
+| GET    | admin/tools/php-info                      | »                   | \Bonfire\Tools\Controllers\SystemInfoController::phpInfo                      | online session admin | alerts toolbar         |
+| GET    | admin/tools/logs                          | sys-logs            | \Bonfire\Tools\Controllers\LogsController::index                              | online session admin | alerts toolbar         |
+| GET    | admin/tools/view-log/([^/]+)              | view-log            | \Bonfire\Tools\Controllers\LogsController::view/$1                            | online session admin | alerts toolbar         |
+| GET    | render-test                               | »                   | (Closure)                                                                     | online               | alerts consent toolbar |
+| GET    | site-offline                              | »                   | (Closure)                                                                     |                      | alerts consent toolbar |
+| POST   | incomingMessage                           | »                   | \App\Controllers\IncomingMessage::index                                       | online               | alerts consent toolbar |
+| POST   | admin/autoResponses                       | »                   | \App\Modules\Admin\Controllers\AutoResponses::create                          | online session admin | alerts toolbar         |
+| POST   | admin/contacts                            | »                   | \App\Modules\Admin\Controllers\Contacts::create                               | online session admin | alerts toolbar         |
+| POST   | admin/projects                            | »                   | \App\Modules\Admin\Controllers\Projects::create                               | online session admin | alerts toolbar         |
+| POST   | admin/search                              | search              | \Bonfire\Search\Controllers\SearchController::overview                        | online session admin | alerts toolbar         |
+| POST   | admin/settings/widgets                    | »                   | \Bonfire\Widgets\Controllers\WidgetsSettingsController::save                  | online session admin | alerts toolbar         |
+| POST   | admin/settings/widgetsReset               | »                   | \Bonfire\Widgets\Controllers\WidgetsSettingsController::resetSettings         | online session admin | alerts toolbar         |
+| POST   | admin/settings/widgets/schemePreview      | »                   | \Bonfire\Widgets\Controllers\WidgetsSettingsController::getColorSchemePreview | online session admin | alerts toolbar         |
+| POST   | admin/settings/general                    | »                   | \Bonfire\Settings\Controllers\GeneralSettingsController::saveGeneral          | online session admin | alerts toolbar         |
+| POST   | admin/settings/users                      | »                   | \Bonfire\Users\Controllers\UserSettingsController::save                       | online session admin | alerts toolbar         |
+| POST   | admin/users                               | user-list           | \Bonfire\Users\Controllers\UserController::list                               | online session admin | alerts toolbar         |
+| POST   | admin/users/([0-9]+)/save                 | user-save           | \Bonfire\Users\Controllers\UserController::save/$1                            | online session admin | alerts toolbar         |
+| POST   | admin/users/([0-9]+)/changePassword       | user-pass-change    | \Bonfire\Users\Controllers\UserController::changePassword/$1                  | online session admin | alerts toolbar         |
+| POST   | admin/users/save                          | »                   | \Bonfire\Users\Controllers\UserController::save                               | online session admin | alerts toolbar         |
+| POST   | admin/users/([0-9]+)/permissions          | »                   | \Bonfire\Users\Controllers\UserController::savePermissions/$1                 | online session admin | alerts toolbar         |
+| POST   | admin/users/delete-batch                  | »                   | \Bonfire\Users\Controllers\UserController::deleteBatch                        | online session admin | alerts toolbar         |
+| POST   | admin/settings/consent                    | »                   | \Bonfire\Consent\Controllers\ConsentSettingsController::save                  | online session admin | alerts toolbar         |
+| POST   | admin/settings/groups                     | »                   | \Bonfire\Groups\Controllers\GroupSettingsController::save                     | online session admin | alerts toolbar         |
+| POST   | admin/settings/groups/([^/]+)             | »                   | \Bonfire\Groups\Controllers\GroupSettingsController::save/$1                  | online session admin | alerts toolbar         |
+| POST   | admin/settings/groups/([^/]+)/permissions | »                   | \Bonfire\Groups\Controllers\GroupSettingsController::savePermissions/$1       | online session admin | alerts toolbar         |
+| POST   | register                                  | »                   | \Bonfire\Auth\Controllers\RegisterController::registerAction                  | online               | alerts consent toolbar |
+| POST   | login                                     | »                   | \Bonfire\Auth\Controllers\LoginController::loginAction                        | online               | alerts consent toolbar |
+| POST   | login/magic-link                          | »                   | \Bonfire\Auth\Controllers\MagicLinkController::loginAction                    | online               | alerts consent toolbar |
+| POST   | auth/a/handle                             | auth-action-handle  | \CodeIgniter\Shield\Controllers\ActionController::handle                      | online               | alerts consent toolbar |
+| POST   | auth/a/verify                             | auth-action-verify  | \CodeIgniter\Shield\Controllers\ActionController::verify                      | online               | alerts consent toolbar |
+| POST   | admin/settings/email                      | »                   | \Bonfire\Email\Controllers\EmailSettingsController::save                      | online session admin | alerts toolbar         |
+| POST   | admin/tools/logs                          | sys-logs            | \Bonfire\Tools\Controllers\LogsController::index                              | online session admin | alerts toolbar         |
+| POST   | admin/tools/delete-log                    | log-delete          | \Bonfire\Tools\Controllers\LogsController::delete                             | online session admin | alerts toolbar         |
+| PATCH  | admin/autoResponses/(.*)                  | »                   | \App\Modules\Admin\Controllers\AutoResponses::update/$1                       | online session admin | alerts toolbar         |
+| PATCH  | admin/contacts/(.*)                       | »                   | \App\Modules\Admin\Controllers\Contacts::update/$1                            | online session admin | alerts toolbar         |
+| PATCH  | admin/projects/(.*)                       | »                   | \App\Modules\Admin\Controllers\Projects::update/$1                            | online session admin | alerts toolbar         |
+| PUT    | admin/autoResponses/(.*)                  | »                   | \App\Modules\Admin\Controllers\AutoResponses::update/$1                       | online session admin | alerts toolbar         |
+| PUT    | admin/contacts/(.*)                       | »                   | \App\Modules\Admin\Controllers\Contacts::update/$1                            | online session admin | alerts toolbar         |
+| PUT    | admin/projects/(.*)                       | »                   | \App\Modules\Admin\Controllers\Projects::update/$1                            | online session admin | alerts toolbar         |
+| DELETE | admin/autoResponses/(.*)                  | »                   | \App\Modules\Admin\Controllers\AutoResponses::delete/$1                       | online session admin | alerts toolbar         |
+| DELETE | admin/contacts/(.*)                       | »                   | \App\Modules\Admin\Controllers\Contacts::delete/$1                            | online session admin | alerts toolbar         |
+| DELETE | admin/projects/(.*)                       | »                   | \App\Modules\Admin\Controllers\Projects::delete/$1                            | online session admin | alerts toolbar         |
++--------+-------------------------------------------+---------------------+-------------------------------------------------------------------------------+----------------------+------------------------+
+

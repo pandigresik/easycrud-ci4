@@ -1,0 +1,692 @@
+openapi: 3.0.0
+info:
+  title: 'swagger easycrud-ci4'
+  description: 'This is a sample server easycrud-ci4'
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: 'Apache 2.0'
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+  version: 1.0.0
+servers:
+  -
+    url: /api
+    description: 'OpenApi host'
+paths:
+  /autoResponses:
+    get:
+      tags:
+        - AutoResponses
+      summary: 'Find list AutoResponses'
+      description: 'Returns list of AutoResponses'
+      operationId: getAutoResponses
+      parameters:
+        -
+          name: search
+          in: query
+          description: 'search by column defined'
+          schema:
+            type: object
+        -
+          name: order
+          in: query
+          description: 'order by column defined'
+          schema:
+            type: object
+        -
+          name: page
+          in: query
+          description: 'page to show'
+          schema:
+            type: int32
+        -
+          name: limit
+          in: query
+          description: 'count data display per page'
+          schema:
+            type: int32
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/AutoResponses' } }
+                  pagination: { properties: { currentPage: { type: integer }, totalPage: { type: integer } }, type: object }
+                type: object
+            application/xml:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/AutoResponses' } }
+                  pagination: { type: array, items: { $ref: '#/components/schemas/AutoResponses' } }
+                type: object
+        '404':
+          description: 'AutoResponses not found'
+      security:
+        -
+          bearer_auth: []
+    post:
+      tags:
+        - AutoResponses
+      summary: 'Add a new AutoResponses to the store'
+      operationId: addAutoResponses
+      requestBody:
+        $ref: '#/components/requestBodies/AutoResponses'
+      responses:
+        '201':
+          description: 'Created AutoResponses'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutoResponses'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AutoResponses'
+        '405':
+          description: 'Invalid input'
+      security:
+        -
+          bearer_auth: []
+  '/autoResponses/{id}':
+    get:
+      tags:
+        - AutoResponses
+      summary: 'Find AutoResponses by ID'
+      description: 'Returns a single AutoResponses'
+      operationId: getAutoResponsesById
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'ID of AutoResponses to return'
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AutoResponses'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/AutoResponses'
+        '400':
+          description: 'Invalid ID supplier'
+        '404':
+          description: 'AutoResponses not found'
+      security:
+        -
+          bearer_auth: []
+    put:
+      tags:
+        - AutoResponses
+      summary: 'Update an existing AutoResponses'
+      operationId: updateAutoResponses
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'AutoResponses id to update'
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/AutoResponses'
+      responses:
+        '400':
+          description: 'Invalid ID supplied'
+        '404':
+          description: 'AutoResponses not found'
+        '405':
+          description: 'Validation exception'
+      security:
+        -
+          bearer_auth: []
+    delete:
+      tags:
+        - AutoResponses
+      summary: 'Deletes a AutoResponses'
+      operationId: deleteAutoResponses
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'AutoResponses id to delete'
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: 'Invalid ID supplied'
+        '404':
+          description: 'Pet not found'
+      security:
+        -
+          bearer_auth: []
+  /contacts:
+    get:
+      tags:
+        - Contacts
+      summary: 'Find list Contacts'
+      description: 'Returns list of Contacts'
+      operationId: getContacts
+      parameters:
+        -
+          name: search
+          in: query
+          description: 'search by column defined'
+          schema:
+            type: object
+        -
+          name: order
+          in: query
+          description: 'order by column defined'
+          schema:
+            type: object
+        -
+          name: page
+          in: query
+          description: 'page to show'
+          schema:
+            type: int32
+        -
+          name: limit
+          in: query
+          description: 'count data display per page'
+          schema:
+            type: int32
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Contacts' } }
+                  pagination: { properties: { currentPage: { type: integer }, totalPage: { type: integer } }, type: object }
+                type: object
+            application/xml:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Contacts' } }
+                  pagination: { type: array, items: { $ref: '#/components/schemas/Contacts' } }
+                type: object
+        '404':
+          description: 'Contacts not found'
+      security:
+        -
+          bearer_auth: []
+    post:
+      tags:
+        - Contacts
+      summary: 'Add a new Contacts to the store'
+      operationId: addContacts
+      requestBody:
+        $ref: '#/components/requestBodies/Contacts'
+      responses:
+        '201':
+          description: 'Created Contacts'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contacts'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Contacts'
+        '405':
+          description: 'Invalid input'
+      security:
+        -
+          bearer_auth: []
+  '/contacts/{id}':
+    get:
+      tags:
+        - Contacts
+      summary: 'Find Contacts by ID'
+      description: 'Returns a single Contacts'
+      operationId: getContactsById
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'ID of Contacts to return'
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Contacts'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Contacts'
+        '400':
+          description: 'Invalid ID supplier'
+        '404':
+          description: 'Contacts not found'
+      security:
+        -
+          bearer_auth: []
+    put:
+      tags:
+        - Contacts
+      summary: 'Update an existing Contacts'
+      operationId: updateContacts
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Contacts id to update'
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/Contacts'
+      responses:
+        '400':
+          description: 'Invalid ID supplied'
+        '404':
+          description: 'Contacts not found'
+        '405':
+          description: 'Validation exception'
+      security:
+        -
+          bearer_auth: []
+    delete:
+      tags:
+        - Contacts
+      summary: 'Deletes a Contacts'
+      operationId: deleteContacts
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Contacts id to delete'
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: 'Invalid ID supplied'
+        '404':
+          description: 'Pet not found'
+      security:
+        -
+          bearer_auth: []
+  /projects:
+    get:
+      tags:
+        - Projects
+      summary: 'Find list Projects'
+      description: 'Returns list of Projects'
+      operationId: getProjects
+      parameters:
+        -
+          name: search
+          in: query
+          description: 'search by column defined'
+          schema:
+            type: object
+        -
+          name: order
+          in: query
+          description: 'order by column defined'
+          schema:
+            type: object
+        -
+          name: page
+          in: query
+          description: 'page to show'
+          schema:
+            type: int32
+        -
+          name: limit
+          in: query
+          description: 'count data display per page'
+          schema:
+            type: int32
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Projects' } }
+                  pagination: { properties: { currentPage: { type: integer }, totalPage: { type: integer } }, type: object }
+                type: object
+            application/xml:
+              schema:
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Projects' } }
+                  pagination: { type: array, items: { $ref: '#/components/schemas/Projects' } }
+                type: object
+        '404':
+          description: 'Projects not found'
+      security:
+        -
+          bearer_auth: []
+    post:
+      tags:
+        - Projects
+      summary: 'Add a new Projects to the store'
+      operationId: addProjects
+      requestBody:
+        $ref: '#/components/requestBodies/Projects'
+      responses:
+        '201':
+          description: 'Created Projects'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Projects'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Projects'
+        '405':
+          description: 'Invalid input'
+      security:
+        -
+          bearer_auth: []
+  '/projects/{id}':
+    get:
+      tags:
+        - Projects
+      summary: 'Find Projects by ID'
+      description: 'Returns a single Projects'
+      operationId: getProjectsById
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'ID of Projects to return'
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: 'successful operation'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Projects'
+            application/xml:
+              schema:
+                $ref: '#/components/schemas/Projects'
+        '400':
+          description: 'Invalid ID supplier'
+        '404':
+          description: 'Projects not found'
+      security:
+        -
+          bearer_auth: []
+    put:
+      tags:
+        - Projects
+      summary: 'Update an existing Projects'
+      operationId: updateProjects
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Projects id to update'
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/Projects'
+      responses:
+        '400':
+          description: 'Invalid ID supplied'
+        '404':
+          description: 'Projects not found'
+        '405':
+          description: 'Validation exception'
+      security:
+        -
+          bearer_auth: []
+    delete:
+      tags:
+        - Projects
+      summary: 'Deletes a Projects'
+      operationId: deleteProjects
+      parameters:
+        -
+          name: id
+          in: path
+          description: 'Projects id to delete'
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '400':
+          description: 'Invalid ID supplied'
+        '404':
+          description: 'Pet not found'
+      security:
+        -
+          bearer_auth: []
+components:
+  schemas:
+    AutoResponses:
+      title: AutoResponses
+      description: AutoResponses
+      properties:
+        id:
+          title: id
+          description: id
+          type: integer
+          format: '-'
+          nullable: false
+        message:
+          title: message
+          description: message
+          type: string
+          format: '-'
+          maxLength: 120
+          nullable: false
+        chat_type:
+          title: chat_type
+          description: chat_type
+          type: string
+          format: '-'
+          nullable: false
+        destination:
+          title: destination
+          description: destination
+          type: string
+          format: '-'
+          maxLength: 255
+          nullable: false
+        response:
+          title: response
+          description: response
+          type: string
+          format: '-'
+          nullable: false
+        description:
+          title: description
+          description: description
+          type: string
+          format: '-'
+          maxLength: 255
+          nullable: false
+        created_at:
+          title: created_at
+          description: created_at
+          type: string
+          format: date
+          nullable: false
+        updated_at:
+          title: updated_at
+          description: updated_at
+          type: string
+          format: date
+          nullable: false
+        created_by:
+          title: created_by
+          description: created_by
+          type: integer
+          format: '-'
+          nullable: true
+      type: object
+    Contacts:
+      title: Contacts
+      description: Contacts
+      properties:
+        id:
+          title: id
+          description: id
+          type: integer
+          format: '-'
+          nullable: false
+        name:
+          title: name
+          description: name
+          type: string
+          format: '-'
+          maxLength: 60
+          nullable: false
+        identity_number:
+          title: identity_number
+          description: identity_number
+          type: string
+          format: '-'
+          maxLength: 255
+          nullable: false
+        created_at:
+          title: created_at
+          description: created_at
+          type: string
+          format: date
+          nullable: false
+        updated_at:
+          title: updated_at
+          description: updated_at
+          type: string
+          format: date
+          nullable: false
+        created_by:
+          title: created_by
+          description: created_by
+          type: integer
+          format: '-'
+          nullable: true
+      type: object
+    Projects:
+      title: Projects
+      description: Projects
+      properties:
+        id:
+          title: id
+          description: id
+          type: integer
+          format: '-'
+          nullable: false
+        name:
+          title: name
+          description: name
+          type: string
+          format: '-'
+          maxLength: 60
+          nullable: false
+        description:
+          title: description
+          description: description
+          type: string
+          format: '-'
+          maxLength: 255
+          nullable: false
+        created_at:
+          title: created_at
+          description: created_at
+          type: string
+          format: date
+          nullable: false
+        updated_at:
+          title: updated_at
+          description: updated_at
+          type: string
+          format: date
+          nullable: false
+        created_by:
+          title: created_by
+          description: created_by
+          type: integer
+          format: '-'
+          nullable: true
+      type: object
+  requestBodies:
+    AutoResponses:
+      description: 'AutoResponses object that needs to be added'
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/AutoResponses'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/AutoResponses'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AutoResponses'
+    Contacts:
+      description: 'Contacts object that needs to be added'
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/Contacts'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Contacts'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Contacts'
+    Projects:
+      description: 'Projects object that needs to be added'
+      content:
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/Projects'
+        application/xml:
+          schema:
+            $ref: '#/components/schemas/Projects'
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Projects'
+  securitySchemes:
+    bearer_auth:
+      type: http
+      description: 'Login with email and password to get the authentication token'
+      name: 'Token based Based'
+      in: header
+      bearerFormat: JWT
+      scheme: bearer
+tags:
+  -
+    name: AutoResponses
+    description: 'Everything about your AutoResponses'
+  -
+    name: Contacts
+    description: 'Everything about your Contacts'
+  -
+    name: Projects
+    description: 'Everything about your Projects'
+externalDocs:
+  description: 'Find out more about Swagger'
+  url: 'http://swagger.io'
